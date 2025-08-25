@@ -89,23 +89,38 @@
     background: var(--gradient-primary) !important;
     box-shadow: 0px 0px 50px var(--accent-alpha) !important;
     border-right: 1px solid var(--medium-gray) !important;
+    /* Reset padding to preserve original VS Code layout */
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-/* File Explorer Selected Item - Smooth accent gradient */
+/* File Explorer Selected Item - Preserve original positioning with proper indentation */
 .monaco-list.list_id_1 .monaco-list-row.selected {
     background: var(--gradient-accent) !important;
     opacity: 1 !important;
-    border-top: 1px var(--light-gray) solid !important;
-    border-bottom: 1px var(--light-gray) solid !important;
-    border-radius: 8px !important;
-    margin: 2px 8px !important;
+    /* Remove borders and border-radius that affect positioning */
+    border: none !important;
+    border-radius: 0 !important;
+    /* Keep the indentation intact - DON'T override padding-left */
+    margin: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-right: 0 !important;
+    /* Let the aria-level rules handle padding-left */
 }
 
-/* File Explorer hover effect - Subtle accent transparency */
+/* File Explorer hover effect - Preserve original positioning with proper indentation */
 .monaco-list.list_id_1 .monaco-list-row:hover {
     background: var(--accent-alpha) !important;
-    border-radius: 6px !important;
-    margin: 1px 8px !important;
+    /* Remove border-radius that affects positioning */
+    border-radius: 0 !important;
+    border: none !important;
+    /* Keep the indentation intact - DON'T override padding-left */
+    margin: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-right: 0 !important;
+    /* Let the aria-level rules handle padding-left */
 }
 
 /* Hide the ">" chevron icon */
@@ -132,6 +147,112 @@
     font-size: 14px !important;
     font-weight: 400 !important;
     color: var(--light-gray) !important;
+    /* Preserve original positioning */
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: inherit !important;
+}
+
+/* File Explorer List Container - Preserve original structure */
+.monaco-list.list_id_1 {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* CRITICAL: Twistie (expand/collapse) positioning fix */
+.monaco-list.list_id_1 .monaco-list-row .monaco-tl-twistie {
+    /* Position twistie correctly relative to the indentation */
+    margin-left: -16px !important;
+    width: 16px !important;
+    height: 22px !important;
+}
+
+/* File icons positioning - ensure proper spacing */
+.monaco-list.list_id_1 .monaco-list-row .file-icon,
+.monaco-list.list_id_1 .monaco-list-row .folder-icon {
+    margin-right: 6px !important;
+    margin-left: 0 !important;
+}
+
+/* File Explorer Items - REPLICATE VS CODE ORIGINAL INDENTATION SYSTEM */
+.monaco-list.list_id_1 .monaco-list-row {
+    /* Basic properties - keep VS Code defaults */
+    height: auto !important;
+    line-height: normal !important;
+    margin: 0 !important;
+    /* REMOVE custom padding - VS Code handles this via positioning */
+    padding: 0 !important;
+}
+
+/* VS CODE AUTHENTIC INDENTATION SYSTEM - Based on core-guide-indent analysis */
+/* Level 0 - Root files/folders */
+.monaco-list.list_id_1 .monaco-list-row[aria-level="1"] {
+    padding-left: 8px !important; /* Base padding for level 1 */
+}
+
+/* Level 1 - First nested level */
+.monaco-list.list_id_1 .monaco-list-row[aria-level="2"] {
+    padding-left: 43px !important; /* 8px + 35px indentation */
+}
+
+/* Level 2 - Second nested level */
+.monaco-list.list_id_1 .monaco-list-row[aria-level="3"] {
+    padding-left: 78px !important; /* 8px + (35px * 2) */
+}
+
+/* Level 3 - Third nested level */
+.monaco-list.list_id_1 .monaco-list-row[aria-level="4"] {
+    padding-left: 113px !important; /* 8px + (35px * 3) */
+}
+
+/* Level 4 - Fourth nested level */
+.monaco-list.list_id_1 .monaco-list-row[aria-level="5"] {
+    padding-left: 148px !important; /* 8px + (35px * 4) */
+}
+
+/* Level 5 and beyond - Dynamic formula */
+.monaco-list.list_id_1 .monaco-list-row[aria-level="6"] {
+    padding-left: 183px !important; /* 8px + (35px * 5) */
+}
+
+.monaco-list.list_id_1 .monaco-list-row[aria-level="7"] {
+    padding-left: 218px !important; /* 8px + (35px * 6) */
+}
+
+/* Explorer Folder Container - Preserve original structure */
+.explorer-folders-view {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Tree/List indentation - BASED ON VS CODE CORE-GUIDE SYSTEM */
+.monaco-tree .monaco-tree-row,
+.monaco-list .monaco-list-row {
+    /* Don't interfere with the aria-level indentation system */
+    margin: 0 !important;
+    text-indent: 0 !important;
+    /* Let the specific aria-level rules handle padding-left */
+}
+
+/* File/Folder Icons - minimal reset */
+.monaco-icon-label {
+    padding-left: 0 !important;
+    margin: 0 !important;
+}
+
+/* REMOVE CONFLICTING OVERRIDES - Clean up previous resets */
+.monaco-workbench .part.sidebar .monaco-list .monaco-list-row {
+    /* Don't override the aria-level specific padding rules */
+    margin: 0 !important;
+    /* Let aria-level rules handle padding-left */
+}
+
+/* Tree components - minimal interference */
+.monaco-tl-indent,
+.monaco-tl-twistie,
+.monaco-tl-contents {
+    /* Only reset problematic properties, keep VS Code positioning */
+    margin: 0 !important;
 }
 
 .explorer-item-edited {
@@ -148,7 +269,7 @@
     top: -3px !important;
 }
 
-/* Sidebar title - Professional gradient background */
+/* Sidebar title - Professional gradient background - No margin bottom */
 .composite.title {
     display: flex !important;
     flex-direction: row !important;
@@ -157,7 +278,7 @@
     background: var(--gradient-secondary) !important;
     border-radius: 0 0 12px 12px !important;
     padding: 8px 12px !important;
-    margin-bottom: 8px !important;
+    margin: 0 !important; /* Remove margin that pushes content down */
 }
 
 .composite.title h2 {

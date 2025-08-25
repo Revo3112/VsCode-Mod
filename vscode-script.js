@@ -767,6 +767,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Enhanced file tree indentation fix with dynamic monitoring
         addFileTreeOptimization() {
+            // DISABLED TO PREVENT CSS CONFLICTS - Let pure CSS handle file tree positioning
+            console.log('🌲 File tree optimization disabled to preserve original VS Code positioning');
+            return;
+
             console.log('🌲 Optimizing file tree indentation...');
 
             // Create ultra-minimal indentation system
