@@ -3,86 +3,118 @@
 ## Architecture Overview
 
 This project implements a comprehensive VS Code theme with dual-layer customization:
-- `custom-vscode.css`: CSS-only styling using VS Code's Monaco Editor DOM structure
-- `vscode-script.js`: JavaScript enhancements for dynamic effects and interaction fixes
+- `custom-vscode.css` (816 lines): Complete theme styling using Monaco Editor DOM targeting
+- `vscode-script.js` (1512 lines): JavaScript enhancements for command palette blur effects and dynamic features
+- Documentation files: `THEME_MAINTENANCE_GUIDE.md`, `architecture-fixes-summary.md` for historical context
 
 ## Critical Design Patterns
 
-### Color Palette System
-All colors MUST use the defined CSS custom properties from `:root` in `custom-vscode.css`:
+### Updated Color Palette System
+**EVOLVED SYSTEM**: The project now uses a professional dual-palette approach in `custom-vscode.css`:
 ```css
---deep-blue-purple: #2E3061    /* Primary accent */
---dark-navy: #28293D           /* Background surfaces */
---medium-purple: #555184       /* Secondary accent */
---lavender-light: #9997BC      /* Soft highlights */
---lavender-pale: #B2A6BE       /* Subtle elements */
---cream-warm: #FEE9CE          /* Attention/Warning */
+/* Modern Professional Colors */
+--lightest: #FFFFFF           /* Pure white - Primary text */
+--light-gray: #B8BCC8        /* Cool light gray - Secondary text */
+--medium-gray: #6C7293       /* Balanced gray-blue - Borders */
+--dark-gray: #212631         /* Black-90 - Secondary backgrounds */
+--darkest: #0A0E15          /* Black-100 - Primary background */
+--accent: #4A90E2           /* Professional blue - Active states */
+
+/* Legacy Compatibility */
+--deep-blue-purple: #4A90E2  /* Maps to modern accent */
+--dark-navy: #0A0E15        /* Maps to darkest */
 ```
-Never use hardcoded hex values - always reference these variables.
+**CRITICAL**: Use new variables for new code, legacy variables maintained for compatibility.
 
-### Popup/Hover Functionality Rules
-**CRITICAL**: This project has specific popup rendering issues that require strict adherence to these patterns:
+### File Explorer Indentation System
+**MATHEMATICAL PRECISION**: Based on analysis of `html_vscode_pure.txt`, VS Code uses a specific indentation formula:
+```css
+/* VS CODE AUTHENTIC INDENTATION - Mathematical Formula: 8px + (35px × level) */
+.monaco-list.list_id_1 .monaco-list-row[aria-level="1"] {
+    padding-left: 8px !important;    /* Base level */
+}
+.monaco-list.list_id_1 .monaco-list-row[aria-level="2"] {
+    padding-left: 43px !important;   /* 8 + (35 × 1) */
+}
+.monaco-list.list_id_1 .monaco-list-row[aria-level="3"] {
+    padding-left: 78px !important;   /* 8 + (35 × 2) */
+}
+```
+**CRITICAL**: Never use `padding: initial !important` or `revert` - it breaks indentation completely.
 
-1. **Always disable `backdrop-filter`**: Use `backdrop-filter: none !important;` for all popup elements
-2. **Use absolute positioning**: Never use `position: fixed` for popups - use `position: absolute !important`
-3. **Standardize z-index**: All popup elements use `z-index: 999999 !important` for consistent stacking
-4. **Enable pointer events**: Always set `pointer-events: auto !important` on interactive popup elements
-
-### CSS-JavaScript Conflict Resolution
-JavaScript hover/popup functions are **intentionally disabled** to prevent conflicts:
+### JavaScript-CSS Conflict Resolution
+**DISABLED FUNCTIONS**: Key JavaScript functions are intentionally disabled to prevent conflicts:
 ```javascript
-// DISABLED: Hover functions to prevent CSS conflicts
-// this.enhanceHoverVisibility();
-// this.addAdvancedHoverManagement();
+// DISABLED TO PREVENT CSS CONFLICTS - Let pure CSS handle file tree positioning
+addFileTreeOptimization() {
+    console.log('🌲 File tree optimization disabled to preserve original VS Code positioning');
+    return; // Early return prevents execution
+}
 ```
-When making changes:
-- Prefer CSS-only solutions over JavaScript for styling
-- If JavaScript is needed, ensure it doesn't override CSS popup positioning
-- Look for `DISABLED TO PREVENT CONFLICTS` comments before re-enabling functions
+**ACTIVE FEATURES**: Only command palette blur effects remain enabled in JavaScript.
 
-### Monaco Editor Targeting
-Target VS Code's Monaco Editor elements using these specific selectors:
+### Popup Styling Strategy
+**COMPLETE REMOVAL POLICY**: All custom popup styling has been systematically removed per `THEME_MAINTENANCE_GUIDE.md`:
+- ❌ Never style `.quick-input-widget`, `.monaco-menu`, `.suggest-widget`, `.context-view`
+- ❌ Never use `backdrop-filter: blur()`, `position: fixed`, custom z-index on popups
+- ✅ Let VS Code handle all popup rendering natively
+
+## File Structure & Workflow
+
+### Primary Files
+- `custom-vscode.css`: Main styling (Lines 1-500: variables, 500-816: file explorer & UI)
+- `vscode-script.js`: Command palette blur effects only
+- `custom-vscode-pure.css`: Legacy backup with old color scheme
+- `vscode-script-pure.js`: Legacy backup without disabled functions
+
+### Documentation Architecture
+- `THEME_MAINTENANCE_GUIDE.md`: Complete architectural decisions and forbidden patterns
+- `architecture-fixes-summary.md`: Historical issue resolution and user request compliance
+- `hyper-thinking-complete-fix.md`: Deep analysis methodology documentation
+
+## Development Patterns
+
+### Typography System
+**FONT HIERARCHY**: Professional typography using specific font families:
 ```css
-.monaco-hover, .monaco-editor-hover     /* Hover tooltips */
-.monaco-menu                            /* Context menus */
-.suggest-widget                         /* Code suggestions */
-.monaco-workbench .part.sidebar         /* File explorer */
-.monaco-list-row                        /* List items */
+/* Code Elements */
+.mtk3 { font-family: 'Monaspace Radon', monospace !important; } /* Comments */
+.monaco-list .label-name { font-family: 'Geist Mono', monospace !important; } /* File names */
+
+/* UI Elements */
+.composite.title h2 {
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
 ```
 
-## Development Workflow
-
-### Testing Popup Functionality
-When modifying popup/hover styles:
-1. Test hover tooltips in the editor
-2. Test right-click context menus
-3. Test IntelliSense suggestions
-4. Test command palette (Ctrl+Shift+P)
-5. Verify no elements are positioned behind others
-
-### Color Consistency Checks
-```bash
-# Search for hardcoded colors that should use variables
-grep -r "rgba([0-9]" *.css
-grep -r "#[0-9A-Fa-f]{6}" *.css
+### Gradient System Usage
+**PREDEFINED GRADIENTS**: Always use CSS custom properties for consistent visual effects:
+```css
+background: var(--gradient-primary) !important;   /* 135deg, darkest → dark-gray */
+background: var(--gradient-accent) !important;    /* 135deg, accent → dark-gray */
+background: var(--gradient-subtle) !important;    /* 180deg, dark-gray → darkest */
 ```
 
-### Backup Strategy
-The project maintains backup files:
-- `custom-vscode-backup.css`
-- `vscode-script-backup.js`
+### Testing Checklist for Changes
+When modifying file explorer or UI elements:
+1. **Indentation Test**: Verify nested folders maintain 35px spacing increments
+2. **Color Consistency**: All elements use CSS variables, no hardcoded colors
+3. **Hover States**: Background changes work without affecting positioning
+4. **Command Palette**: Ctrl+Shift+P blur effect functions correctly
+5. **Typography**: Font families render correctly across all elements
 
-Always create backups before major changes to prevent loss of working configurations.
+## Critical Constraints
 
-## Common Pitfalls
+### Never Modify These Patterns
+- File explorer indentation mathematical formula (breaks folder navigation)
+- JavaScript command palette observer (breaks blur effects)
+- Legacy color variable mappings (breaks compatibility)
+- Popup styling removal policy (causes visual artifacts)
 
-1. **Backdrop-filter conflicts**: Adding `backdrop-filter: blur()` breaks popup rendering
-3. **Z-index wars**: Using inconsistent z-index values causes popup stacking issues
-3. **Position fixed problems**: VS Code's popup system conflicts with fixed positioning
-4. **Color inconsistency**: Mixing hardcoded colors with CSS variables breaks the design system
-5. **JavaScript conflicts**: Enabling disabled JavaScript functions can override CSS fixes
-
-## File Structure
-- `custom-vscode.css` (2168 lines): Complete theme styling
-- `vscode-script.js` (1358 lines): Dynamic effects and interaction fixes
-- Backup files for safety
+### Safe Modification Areas
+- Background gradients and colors (non-popup elements)
+- Typography styling (fonts, weights, sizes)
+- Editor enhancements (line numbers, current line highlights)
+- Activity bar and status bar styling
