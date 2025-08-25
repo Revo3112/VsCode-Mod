@@ -7,7 +7,7 @@
     --medium-gray: #6C7293;     /* Balanced gray-blue - Borders, inactive elements */
     --dark-gray: #212631;       /* Black-90 - Secondary backgrounds, panels */
     --darkest: #0A0E15;         /* Black-100 - Primary background, deep surfaces */
-    --accent: #4A90E2;          /* Professional blue - Selections, highlights, active */
+    --accent: #353A5F;          /* Custom blue-gray - Selections, highlights, active */
 
     /* Alpha Variants for Smooth Gradients and Layering */
     --lightest-alpha: rgba(255, 255, 255, 0.9);
@@ -15,7 +15,7 @@
     --medium-gray-alpha: rgba(108, 114, 147, 0.7);
     --dark-gray-alpha: rgba(33, 38, 49, 0.9);
     --darkest-alpha: rgba(10, 14, 21, 0.95);
-    --accent-alpha: rgba(74, 144, 226, 0.6);
+    --accent-alpha: rgba(53, 58, 95, 0.6);
 
     /* Gradient Combinations for Smooth Transitions */
     --gradient-primary: linear-gradient(135deg, var(--darkest) 0%, var(--dark-gray) 100%);
@@ -24,7 +24,7 @@
     --gradient-subtle: linear-gradient(180deg, var(--dark-gray) 0%, var(--darkest) 100%);
 
     /* Legacy Compatibility - Map to new professional colors */
-    --deep-blue-purple: #4A90E2; /* Maps to professional blue accent */
+    --deep-blue-purple: #353A5F; /* Maps to custom blue-gray accent */
     --dark-navy: #0A0E15; /* Maps to black-100 */
     --medium-purple: #212631; /* Maps to black-90 */
     --lavender-light: #B8BCC8; /* Maps to cool light gray */
@@ -32,6 +32,7 @@
     --cream-warm: #FFFFFF; /* Maps to pure white */
     --medium-purple-alpha: rgba(33, 38, 49, 0.7);
     --dark-navy-alpha: rgba(10, 14, 21, 0.9);
+    --deep-blue-purple-alpha: rgba(53, 58, 95, 0.7);
 }
 
 /* ===== EDITOR AREA ===== */
