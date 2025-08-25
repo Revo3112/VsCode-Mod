@@ -1,90 +1,109 @@
-/* Enhanced Color Palette Variables */
+/* Sophisticated Elite Color Palette Variables */
+/* Sophisticated Elegant Dark Color Palette Variables */
 :root {
-    --deep-blue-purple: #2E3061; /* Primary accent */
-    --dark-navy: #28293D; /* Background surfaces */
-    --medium-purple: #555184; /* Secondary accent */
-    --lavender-light: #9997BC; /* Soft highlights */
-    --lavender-pale: #B2A6BE; /* Subtle elements */
-    --cream-warm: #FEE9CE; /* Attention/Warning */
+    /* Professional Dark Theme - Elegant Black Gradient System */
+    --lightest: #FFFFFF;        /* Pure white - Primary text, maximum contrast */
+    --light-gray: #B8BCC8;      /* Cool light gray - Secondary text, subtle elements */
+    --medium-gray: #6C7293;     /* Balanced gray-blue - Borders, inactive elements */
+    --dark-gray: #212631;       /* Black-90 - Secondary backgrounds, panels */
+    --darkest: #0A0E15;         /* Black-100 - Primary background, deep surfaces */
+    --accent: #4A90E2;          /* Professional blue - Selections, highlights, active */
 
-    /* Additional color variations for more depth */
-    --deep-blue-purple-alpha: rgba(46, 48, 97, 0.8);
-    --dark-navy-alpha: rgba(40, 41, 61, 0.9);
-    --medium-purple-alpha: rgba(85, 81, 132, 0.7);
-    --lavender-light-alpha: rgba(153, 151, 188, 0.6);
-    --cream-warm-alpha: rgba(254, 233, 206, 0.9);
+    /* Alpha Variants for Smooth Gradients and Layering */
+    --lightest-alpha: rgba(255, 255, 255, 0.9);
+    --light-gray-alpha: rgba(184, 188, 200, 0.8);
+    --medium-gray-alpha: rgba(108, 114, 147, 0.7);
+    --dark-gray-alpha: rgba(33, 38, 49, 0.9);
+    --darkest-alpha: rgba(10, 14, 21, 0.95);
+    --accent-alpha: rgba(74, 144, 226, 0.6);
+
+    /* Gradient Combinations for Smooth Transitions */
+    --gradient-primary: linear-gradient(135deg, var(--darkest) 0%, var(--dark-gray) 100%);
+    --gradient-secondary: linear-gradient(90deg, var(--dark-gray) 0%, var(--darkest) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--dark-gray) 70%);
+    --gradient-subtle: linear-gradient(180deg, var(--dark-gray) 0%, var(--darkest) 100%);
+
+    /* Legacy Compatibility - Map to new professional colors */
+    --deep-blue-purple: #4A90E2; /* Maps to professional blue accent */
+    --dark-navy: #0A0E15; /* Maps to black-100 */
+    --medium-purple: #212631; /* Maps to black-90 */
+    --lavender-light: #B8BCC8; /* Maps to cool light gray */
+    --lavender-pale: #6C7293; /* Maps to medium gray */
+    --cream-warm: #FFFFFF; /* Maps to pure white */
+    --medium-purple-alpha: rgba(33, 38, 49, 0.7);
+    --dark-navy-alpha: rgba(10, 14, 21, 0.9);
 }
 
 /* ===== EDITOR AREA ===== */
 
-/* Code comment style */
+/* Code comment style - Enhanced readability with medium gray */
 .mtk3 {
     font-family: 'Monaspace Radon', monospace !important;
     font-style: italic !important;
-    color: var(--lavender-light) !important;
+    color: var(--medium-gray) !important;
 }
 
-/* Code canvas top shadow */
+/* Code canvas top shadow - Subtle accent shadow */
 .monaco-editor .scroll-decoration {
-    box-shadow: 0px 0px 20px var(--deep-blue-purple-alpha) !important;
+    box-shadow: 0px 0px 20px var(--accent-alpha) !important;
     top: -6px !important;
 }
 
-/* Match Text */
+/* Match Text - High contrast selection */
 .currentFindMatchInline {
-    background: var(--deep-blue-purple) !important;
-    color: var(--cream-warm) !important;
+    background: var(--accent) !important;
+    color: var(--lightest) !important;
     border-radius: 4px !important;
 }
 
-/* Editor background */
+/* Editor background - Primary dark background */
 .monaco-editor .monaco-editor-background {
-    background: var(--dark-navy) !important;
+    background: var(--darkest) !important;
 }
 
-/* Line numbers */
+/* Line numbers - Subtle medium gray */
 .monaco-editor .line-numbers {
-    color: var(--lavender-pale) !important;
+    color: var(--medium-gray) !important;
 }
 
-/* Current line number */
+/* Current line number - Bright primary text */
 .monaco-editor .current-line-number {
-    color: var(--cream-warm) !important;
+    color: var(--lightest) !important;
     font-weight: bold !important;
 }
 
-/* Selection highlight */
+/* Selection highlight - Accent with transparency */
 .monaco-editor .selected-text {
-    background: var(--medium-purple-alpha) !important;
+    background: var(--accent-alpha) !important;
 }
 
-/* Cursor line */
+/* Cursor line - Dark gray highlight */
 .monaco-editor .current-line {
-    background: var(--deep-blue-purple-alpha) !important;
+    background: var(--dark-gray-alpha) !important;
 }
 
 /* ===== SIDEBAR ===== */
 
-/* Side bar background */
+/* Side bar background - Professional gradient with smooth transition */
 .part.sidebar {
-    background: var(--dark-navy) !important;
-    box-shadow: 0px 0px 50px var(--deep-blue-purple-alpha) !important;
-    border-right: 1px solid var(--medium-purple) !important;
+    background: var(--gradient-primary) !important;
+    box-shadow: 0px 0px 50px var(--accent-alpha) !important;
+    border-right: 1px solid var(--medium-gray) !important;
 }
 
-/* File Explorer Selected Item */
+/* File Explorer Selected Item - Smooth accent gradient */
 .monaco-list.list_id_1 .monaco-list-row.selected {
-    background: linear-gradient(135deg, var(--deep-blue-purple) 0%, var(--medium-purple) 100%) !important;
+    background: var(--gradient-accent) !important;
     opacity: 1 !important;
-    border-top: 1px var(--lavender-light) solid !important;
-    border-bottom: 1px var(--lavender-light) solid !important;
+    border-top: 1px var(--light-gray) solid !important;
+    border-bottom: 1px var(--light-gray) solid !important;
     border-radius: 8px !important;
     margin: 2px 8px !important;
 }
 
-/* File Explorer hover effect */
+/* File Explorer hover effect - Subtle accent transparency */
 .monaco-list.list_id_1 .monaco-list-row:hover {
-    background: var(--medium-purple-alpha) !important;
+    background: var(--accent-alpha) !important;
     border-radius: 6px !important;
     margin: 1px 8px !important;
 }
@@ -94,9 +113,9 @@
     display: none !important;
 }
 
-/* List item label name */
+/* List item label name - High contrast on selection */
 .monaco-list.list_id_1 .monaco-list-row.selected .label-name {
-    color: var(--cream-warm) !important;
+    color: var(--lightest) !important;
     opacity: 1 !important;
     font-weight: 500 !important;
 }
@@ -106,36 +125,36 @@
     display: none;
 }
 
-/* File Explorer Item Label */
+/* File Explorer Item Label - Professional typography with light gray text */
 .monaco-tree .monaco-tree-row .label-name,
 .monaco-list .monaco-list-row .monaco-icon-label .label-name {
     font-family: 'Geist Mono', monospace !important;
     font-size: 14px !important;
     font-weight: 400 !important;
-    color: var(--lavender-light) !important;
+    color: var(--light-gray) !important;
 }
 
 .explorer-item-edited {
     font-family: Geist Mono !important;
     font-size: 14px !important;
-    background: var(--cream-warm-alpha) !important;
+    background: var(--lightest-alpha) !important;
     border-radius: 4px !important;
     padding: 2px 4px !important;
 }
 
-/* Sidebar top shadow */
+/* Sidebar top shadow - Accent shadow */
 .monaco-scrollable-element>.shadow.top {
-    box-shadow: 0px 0px 10px var(--deep-blue-purple-alpha) !important;
+    box-shadow: 0px 0px 10px var(--accent-alpha) !important;
     top: -3px !important;
 }
 
-/* Sidebar title */
+/* Sidebar title - Professional gradient background */
 .composite.title {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
     justify-items: center !important;
-    background: var(--medium-purple) !important;
+    background: var(--gradient-secondary) !important;
     border-radius: 0 0 12px 12px !important;
     padding: 8px 12px !important;
     margin-bottom: 8px !important;
@@ -145,93 +164,95 @@
     font-weight: bold !important;
     font-size: 12px !important;
     text-transform: uppercase !important;
-    color: var(--cream-warm) !important;
+    color: var(--lightest) !important;
     letter-spacing: 1px !important;
 }
 
-/* Scroll Bar */
+/* Scroll Bar - Elegant gradient using professional grays */
 .slider {
     position: absolute !important;
     right: 1px !important;
     width: 3px !important;
-    background: linear-gradient(to bottom, var(--lavender-light), var(--lavender-pale)) !important;
+    background: var(--gradient-subtle) !important;
     border-radius: 2px !important;
     left: auto !important;
 }
 
 /* ===== TABS ===== */
 
-/* Tab background */
+/* Tab background - Primary dark background */
 .tab {
-    background: var(--dark-navy) !important;
-    border-right: 1px solid var(--medium-purple) !important;
-    color: var(--lavender-pale) !important;
+    background: var(--darkest) !important;
+    border-right: 1px solid var(--medium-gray) !important;
+    color: var(--light-gray) !important;
 }
 
-/* Active tab */
+/* Active tab - Elegant gradient */
 .tab.active {
-    background: linear-gradient(135deg, var(--deep-blue-purple), var(--medium-purple)) !important;
-    color: var(--cream-warm) !important;
-    border-bottom: 2px solid var(--cream-warm) !important;
+    background: var(--gradient-accent) !important;
+    color: var(--lightest) !important;
+    border-bottom: 2px solid var(--lightest) !important;
 }
 
-/* Tab hover */
+/* Tab hover - Transparent accent */
 .tab:hover {
-    background: var(--medium-purple-alpha) !important;
-    color: var(--lavender-light) !important;
+    background: var(--accent-alpha) !important;
+    color: var(--lightest) !important;
 }
 
 /* ===== STATUSBAR ===== */
 
-/* Status bar */
+/* Status bar - Smooth horizontal gradient */
 .part.statusbar {
-    background: linear-gradient(90deg, var(--deep-blue-purple), var(--medium-purple)) !important;
-    color: var(--cream-warm) !important;
-    border-top: 1px solid var(--lavender-light) !important;
+    background: linear-gradient(90deg, var(--accent), var(--dark-gray)) !important;
+    color: var(--lightest) !important;
+    border-top: 1px solid var(--light-gray) !important;
 }
 
-/* Status bar items */
+/* Status bar items - Light gray text */
 .statusbar-item {
-    color: var(--lavender-light) !important;
+    color: var(--light-gray) !important;
 }
 
 .statusbar-item:hover {
-    background: var(--dark-navy-alpha) !important;
+    background: var(--darkest-alpha) !important;
     border-radius: 4px !important;
 }
 
 /* ===== TOOLTIPS & HOVERS ===== */
 
-/* Tooltip box style */
+/* Tooltip box style - REMOVE TRANSPARENCY ONLY */
 .monaco-editor-hover,
 .monaco-hover {
-    box-shadow: 0px 8px 32px var(--deep-blue-purple-alpha) !important;
-    background: linear-gradient(135deg, var(--medium-purple) 0%, var(--dark-navy) 100%) !important;
-    backdrop-filter: blur(10px) !important;
+    box-shadow: 0px 8px 32px var(--accent-alpha) !important;
+    background: var(--dark-gray) !important;
+    backdrop-filter: none !important;
     border-radius: 16px !important;
-    border: 1px solid var(--lavender-light-alpha) !important;
+    border: 1px solid var(--light-gray) !important;
     outline: 0px !important;
+    color: var(--lightest) !important;
 }
 
 .monaco-resizable-hover {
     border: none !important;
+    background: var(--dark-gray) !important;
 }
 
 /* ===== TITLEBAR ===== */
 
-/* Titlebar background */
+/* Titlebar background - Primary dark background */
 .titlebar {
-    background: var(--dark-navy) !important;
-    border-bottom: 1px solid var(--medium-purple) !important;
+    background: var(--darkest) !important;
+    border-bottom: 1px solid var(--medium-gray) !important;
 }
 
-/* Project title's style at the top */
+/* Project title's style at the top - Accent background */
 .monaco-workbench .part.titlebar>.titlebar-container>.titlebar-center>.window-title>.command-center .action-item.command-center-center {
     border: none !important;
-    background: var(--medium-purple-alpha) !important;
+    background: var(--accent-alpha) !important;
     border-radius: 8px !important;
     padding: 4px 12px !important;
-    color: var(--cream-warm) !important;
+    color: var(--lightest) !important;
 }
 
 /* Project Title */
@@ -287,35 +308,38 @@
 
 /* ===== COMMAND PALETTE ===== */
 
-/* Command Palette */
+/* Command Palette - REMOVE TRANSPARENCY ONLY */
 .quick-input-widget {
     transform: translateY(-50%) !important;
     top: 50% !important;
-    box-shadow: 0px 16px 64px var(--deep-blue-purple-alpha) !important;
-    border: 2px solid var(--lavender-light-alpha) !important;
+    box-shadow: 0px 16px 64px var(--accent-alpha) !important;
+    border: 2px solid var(--accent) !important;
     padding: 20px 20px 28px 20px !important;
-    background: linear-gradient(135deg, var(--medium-purple) 0%, var(--dark-navy) 100%) !important;
-    backdrop-filter: blur(15px) !important;
+    background: var(--dark-gray) !important;
+    backdrop-filter: none !important;
     border-radius: 24px !important;
 }
 
 .quick-input-list, .quick-input-list .list_id_6 {
     min-height: 400px !important;
+    background: transparent !important;
 }
 
-/* Command palette items */
+/* Command palette items - IMPROVE CONTRAST ONLY */
 .quick-input-list .monaco-list-row {
     border-radius: 8px !important;
     margin: 2px 0 !important;
+    color: var(--lightest) !important;
 }
 
 .quick-input-list .monaco-list-row:hover {
-    background: var(--deep-blue-purple-alpha) !important;
+    background: var(--accent-alpha) !important;
+    color: var(--lightest) !important;
 }
 
 .quick-input-list .monaco-list-row.focused {
-    background: linear-gradient(135deg, var(--deep-blue-purple), var(--medium-purple)) !important;
-    color: var(--cream-warm) !important;
+    background: var(--accent) !important;
+    color: var(--lightest) !important;
 }
 
 /* Remove background for lists */
@@ -323,32 +347,32 @@
     background: transparent !important;
 }
 
-/* Command palette text input */
+/* Command palette text input - REMOVE TRANSPARENCY ONLY */
 .quick-input-filter .monaco-inputbox {
     border-radius: 16px !important;
     padding: 18px !important;
-    border: 2px solid var(--lavender-light-alpha) !important;
-    background: var(--dark-navy-alpha) !important;
+    border: 2px solid var(--accent) !important;
+    background: var(--darkest) !important;
     font-family: "Geist Mono" !important;
     font-size: 16px !important;
     margin-bottom: 16px !important;
-    color: var(--cream-warm) !important;
+    color: var(--lightest) !important;
 }
 
 .quick-input-filter .monaco-inputbox:focus {
-    border-color: var(--cream-warm) !important;
-    box-shadow: 0 0 0 2px var(--cream-warm-alpha) !important;
+    border-color: var(--lightest) !important;
+    box-shadow: 0 0 0 2px var(--accent-alpha) !important;
 }
 
-/* Command blur backdrop */
+/* Command blur backdrop - REMOVE TRANSPARENCY ONLY */
 #command-blur {
     position: absolute !important;
     width: 100% !important;
     height: 100% !important;
-    background: var(--dark-navy-alpha) !important;
+    background: var(--darkest-alpha) !important;
     top: 0 !important;
     left: 0 !important;
-    backdrop-filter: blur(12px) !important;
+    backdrop-filter: none !important;
 }
 
 /* Actions after command palette text input */
@@ -363,9 +387,14 @@
     align-items: center !important;
 }
 
-/* Command palette's input box placeholder */
+/* Command palette's input box placeholder - IMPROVE CONTRAST */
 .monaco-inputbox input::placeholder {
-    color: var(--lavender-pale) !important;
+    color: var(--light-gray) !important;
+}
+
+/* Monaco inputbox text */
+.monaco-inputbox input {
+    color: var(--lightest) !important;
 }
 
 /* ===== ADDITIONAL ENHANCEMENTS ===== */
@@ -396,99 +425,113 @@
     padding: 4px 8px !important;
 }
 
-/* Activity bar */
+/* Activity bar - Accent background */
 .part.activitybar {
-    background: var(--deep-blue-purple) !important;
-    border-right: 1px solid var(--medium-purple) !important;
+    background: var(--gradient-subtle) !important;
+    border-right: 1px solid var(--medium-gray) !important;
 }
 
-/* Activity bar items */
+/* Activity bar items - Light gray inactive, lightest active */
 .activitybar .action-item {
-    color: var(--lavender-pale) !important;
+    color: var(--light-gray) !important;
 }
 
 .activitybar .action-item.checked {
-    background: var(--medium-purple-alpha) !important;
+    background: var(--gradient-accent) !important;
     border-radius: 8px !important;
-    color: var(--cream-warm) !important;
+    color: var(--lightest) !important;
 }
 
-/* Panel (terminal, problems, etc.) */
+/* Panel (terminal, problems, etc.) - Primary dark background */
 .part.panel {
-    background: var(--dark-navy) !important;
-    border-top: 1px solid var(--medium-purple) !important;
+    background: var(--darkest) !important;
+    border-top: 1px solid var(--medium-gray) !important;
 }
 
-/* Panel tabs */
+/* Panel tabs - Light gray inactive, lightest active */
 .panel .composite.title .actions-container .action-item {
-    color: var(--lavender-pale) !important;
+    color: var(--light-gray) !important;
 }
 
 .panel .composite.title .actions-container .action-item.checked {
-    color: var(--cream-warm) !important;
-    border-bottom: 2px solid var(--cream-warm) !important;
+    color: var(--lightest) !important;
+    border-bottom: 2px solid var(--lightest) !important;
 }
 
-/* Terminal */
+/* Terminal - Primary dark background */
 .terminal-outer-container {
-    background: var(--dark-navy) !important;
+    background: var(--darkest) !important;
 }
 
-/* Context menu */
+/* Context menu - REMOVE TRANSPARENCY ONLY */
 .context-view {
-    background: var(--medium-purple) !important;
-    border: 1px solid var(--lavender-light) !important;
+    background: var(--dark-gray) !important;
+    border: 1px solid var(--accent) !important;
     border-radius: 8px !important;
-    box-shadow: 0 8px 32px var(--deep-blue-purple-alpha) !important;
+    box-shadow: 0 8px 32px var(--accent-alpha) !important;
+    backdrop-filter: none !important;
 }
 
-/* Context menu items */
+/* Context menu items - IMPROVE CONTRAST ONLY */
 .monaco-menu .monaco-action-bar .action-item {
-    color: var(--lavender-light) !important;
+    color: var(--lightest) !important;
 }
 
 .monaco-menu .monaco-action-bar .action-item:hover {
-    background: var(--deep-blue-purple-alpha) !important;
-    color: var(--cream-warm) !important;
+    background: var(--accent-alpha) !important;
+    color: var(--lightest) !important;
 }
 
-/* Notification center */
+/* Notification center - REMOVE TRANSPARENCY ONLY */
 .notifications-center {
-    background: var(--medium-purple) !important;
-    border: 1px solid var(--lavender-light) !important;
+    background: var(--dark-gray) !important;
+    border: 1px solid var(--accent) !important;
     border-radius: 12px !important;
+    backdrop-filter: none !important;
 }
 
-/* Notification items */
-.notification-toast {
-    background: var(--deep-blue-purple) !important;
-    color: var(--lavender-light) !important;
-    border-radius: 8px !important;
-}
-
-/* Button styles */
+/* Button styles - IMPROVE CONTRAST ONLY */
 .monaco-button {
-    background: var(--medium-purple) !important;
-    color: var(--cream-warm) !important;
+    background: var(--accent) !important;
+    color: var(--lightest) !important;
     border-radius: 8px !important;
-    border: 1px solid var(--lavender-light) !important;
+    border: 1px solid var(--accent) !important;
 }
 
 .monaco-button:hover {
-    background: var(--deep-blue-purple) !important;
+    background: var(--darkest) !important;
+    border-color: var(--lightest) !important;
 }
 
-/* Input fields */
+/* Input fields - REMOVE TRANSPARENCY ONLY */
 .monaco-inputbox {
-    background: var(--dark-navy-alpha) !important;
-    border: 1px solid var(--lavender-light) !important;
+    background: var(--darkest) !important;
+    border: 1px solid var(--accent) !important;
     border-radius: 6px !important;
-    color: var(--lavender-light) !important;
+    color: var(--lightest) !important;
 }
 
 .monaco-inputbox:focus {
-    border-color: var(--cream-warm) !important;
-    box-shadow: 0 0 0 1px var(--cream-warm-alpha) !important;
+    border-color: var(--lightest) !important;
+    box-shadow: 0 0 0 1px var(--accent-alpha) !important;
+}
+
+/* ===== ADDITIONAL POPUP FIXES - MINIMAL CHANGES ===== */
+
+/* Monaco Menu - REMOVE TRANSPARENCY ONLY */
+.monaco-menu {
+    background: var(--dark-gray) !important;
+    border: 1px solid var(--accent) !important;
+    backdrop-filter: none !important;
+    color: var(--lightest) !important;
+}
+
+/* Suggest Widget - REMOVE TRANSPARENCY ONLY */
+.suggest-widget {
+    background: var(--dark-gray) !important;
+    border: 1px solid var(--accent) !important;
+    backdrop-filter: none !important;
+    color: var(--lightest) !important;
 }
 
 /* ========================================
@@ -506,20 +549,15 @@
     pointer-events: none !important;
 }
 
-/* Individual Notification Toast - Enhanced Design */
+/* Individual Notification Toast - REMOVE TRANSPARENCY ONLY */
 .notification-toast {
-    background: linear-gradient(135deg,
-        var(--medium-purple) 0%,
-        var(--dark-navy) 100%) !important;
-    border: 2px solid var(--lavender-light-alpha) !important;
+    background: var(--dark-gray) !important;
+    border: 2px solid var(--accent) !important;
     border-radius: 16px !important;
     margin-bottom: 12px !important;
     padding: 16px 20px !important;
-    box-shadow:
-        0 8px 32px var(--deep-blue-purple-alpha),
-        0 0 0 1px rgba(255, 255, 255, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
-    backdrop-filter: blur(20px) saturate(150%) !important;
+    box-shadow: 0 8px 32px var(--accent-alpha) !important;
+    backdrop-filter: none !important;
     pointer-events: auto !important;
     transform: translateX(420px) scale(0.8) !important;
     opacity: 0 !important;
@@ -539,28 +577,28 @@
     transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) !important;
 }
 
-/* Notification Content Styling */
+/* Notification Content Styling - HIGH CONTRAST */
 .notification-toast .notification-toast-contents {
-    color: var(--lavender-light) !important;
+    color: var(--lightest) !important;
     font-family: 'Inter', sans-serif !important;
     font-size: 14px !important;
     line-height: 1.5 !important;
 }
 
-/* Notification Title */
+/* Notification Title - BRIGHT CONTRAST */
 .notification-toast .notification-toast-contents .notification-source {
-    color: var(--cream-warm) !important;
+    color: var(--lightest) !important;
     font-weight: 600 !important;
     font-size: 15px !important;
     margin-bottom: 4px !important;
     display: block !important;
 }
 
-/* Notification Message */
+/* Notification Message - HIGH READABILITY */
 .notification-toast .notification-toast-contents .notification-message {
-    color: var(--lavender-light) !important;
+    color: var(--light-gray) !important;
     font-weight: 400 !important;
-    opacity: 0.9 !important;
+    opacity: 1 !important;
 }
 
 /* Notification Actions */
