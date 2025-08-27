@@ -585,23 +585,80 @@
     background: var(--darkest) !important;
 }
 
-/* Context menu - REMOVE TRANSPARENCY ONLY */
-.context-view {
+/* ===== CONTEXT MENU - MAXIMUM STRENGTH TRANSPARENCY REMOVAL ===== */
+
+/* Primary Context Menu Container - All Possible Variations */
+.context-view.monaco-component.bottom.left,
+.context-view.monaco-component.top.left,
+.context-view.monaco-component.bottom.right,
+.context-view.monaco-component.top.right,
+.context-view.monaco-component.monaco-menu-container.bottom.left,
+.context-view.monaco-component.monaco-menu-container.top.left,
+.context-view.monaco-component.monaco-menu-container.bottom.right,
+.context-view.monaco-component.monaco-menu-container.top.right,
+div.context-view.monaco-component,
+div.context-view.monaco-component.monaco-menu-container {
     background: var(--dark-gray) !important;
+    background-color: var(--dark-gray) !important;
     border: 1px solid var(--accent) !important;
     border-radius: 8px !important;
     box-shadow: 0 8px 32px var(--accent-alpha) !important;
     backdrop-filter: none !important;
+    opacity: 1 !important;
+    /* Force VS Code variables */
+    --vscode-menu-background: var(--dark-gray) !important;
+    --vscode-menu-foreground: var(--lightest) !important;
+    /* Ensure visibility */
+    visibility: visible !important;
+    /* Ultra-high z-index to ensure on top */
+    z-index: 999999 !important;
 }
 
-/* Context menu items - IMPROVE CONTRAST ONLY */
-.monaco-menu .monaco-action-bar .action-item {
+/* Monaco Menu inside Context View - Maximum Coverage */
+.context-view .monaco-menu,
+.context-view.monaco-component .monaco-menu,
+.context-view.monaco-component.monaco-menu-container .monaco-menu,
+.monaco-menu-container .monaco-menu,
+div.context-view div.monaco-menu {
+    background: var(--dark-gray) !important;
+    background-color: var(--dark-gray) !important;
+    border: 1px solid var(--accent) !important;
+    backdrop-filter: none !important;
     color: var(--lightest) !important;
+    opacity: 1 !important;
+    /* Force VS Code menu variables */
+    --vscode-menu-background: var(--dark-gray) !important;
+    --vscode-menu-foreground: var(--lightest) !important;
+    --vscode-menu-border: var(--accent) !important;
 }
 
-.monaco-menu .monaco-action-bar .action-item:hover {
+/* Action Items inside Context Menu - Anti-Transparent Protection */
+.context-view .monaco-menu .monaco-action-bar .action-item,
+.context-view.monaco-component .monaco-action-bar .action-item,
+.context-view.monaco-component.monaco-menu-container .monaco-action-bar .action-item,
+.monaco-menu-container .monaco-menu .monaco-action-bar .action-item,
+div.context-view div.monaco-menu ul.actions-container li.action-item {
+    color: var(--lightest) !important;
+    background: var(--dark-gray) !important;
+    background-color: var(--dark-gray) !important;
+    opacity: 1 !important;
+    /* Override any JavaScript-applied transparency */
+    --vscode-menu-background: var(--dark-gray) !important;
+    --vscode-menu-selectionBackground: var(--accent-alpha) !important;
+}
+
+/* Action Items Hover State */
+.context-view .monaco-menu .monaco-action-bar .action-item:hover,
+.context-view.monaco-component .monaco-action-bar .action-item:hover,
+.context-view.monaco-component.monaco-menu-container .monaco-action-bar .action-item:hover,
+.monaco-menu-container .monaco-menu .monaco-action-bar .action-item:hover,
+div.context-view div.monaco-menu ul.actions-container li.action-item:hover {
     background: var(--accent-alpha) !important;
+    background-color: var(--accent-alpha) !important;
     color: var(--lightest) !important;
+    opacity: 1 !important;
+    /* Override any JavaScript-applied transparency on hover */
+    --vscode-menu-hoverBackground: var(--accent-alpha) !important;
 }
 
 /* Notification center - REMOVE TRANSPARENCY ONLY */
@@ -640,12 +697,54 @@
 
 /* ===== ADDITIONAL POPUP FIXES - MINIMAL CHANGES ===== */
 
-/* Monaco Menu - REMOVE TRANSPARENCY ONLY */
-.monaco-menu {
+/* Monaco Menu - REMOVE TRANSPARENCY ONLY - JAVASCRIPT-PROOF */
+.monaco-menu,
+.context-view .monaco-menu,
+.context-view.monaco-component .monaco-menu,
+.context-view.monaco-menu-container .monaco-menu {
     background: var(--dark-gray) !important;
     border: 1px solid var(--accent) !important;
     backdrop-filter: none !important;
     color: var(--lightest) !important;
+    opacity: 1 !important;
+    /* Anti-JavaScript transparency protection */
+    animation: forceOpaque 0.1s forwards !important;
+}
+
+/* CSS Animation to force opacity and prevent JavaScript overrides - ENHANCED */
+@keyframes forceContextMenuOpaque {
+    from, to {
+        opacity: 1 !important;
+        background: var(--dark-gray) !important;
+        background-color: var(--dark-gray) !important;
+        --vscode-menu-background: var(--dark-gray) !important;
+        --vscode-menu-foreground: var(--lightest) !important;
+        visibility: visible !important;
+    }
+}
+
+/* Apply animation to all context menu variations */
+.context-view.monaco-component.bottom.left,
+.context-view.monaco-component.top.left,
+.context-view.monaco-component.bottom.right,
+.context-view.monaco-component.top.right,
+.context-view.monaco-component.monaco-menu-container.bottom.left,
+.context-view.monaco-component.monaco-menu-container.top.left,
+.context-view.monaco-component.monaco-menu-container.bottom.right,
+.context-view.monaco-component.monaco-menu-container.top.right,
+div.context-view.monaco-component,
+div.context-view.monaco-component.monaco-menu-container {
+    /* Anti-JavaScript transparency protection */
+    animation: forceContextMenuOpaque 0.1s forwards !important;
+}
+
+/* Also apply to monaco menu elements */
+.context-view .monaco-menu,
+.context-view.monaco-component .monaco-menu,
+.context-view.monaco-component.monaco-menu-container .monaco-menu,
+.monaco-menu-container .monaco-menu,
+div.context-view div.monaco-menu {
+    animation: forceContextMenuOpaque 0.1s forwards !important;
 }
 
 /* Suggest Widget - REMOVE TRANSPARENCY ONLY */

@@ -983,6 +983,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Force remove extension hover backgrounds with surgical precision
         forceRemoveExtensionHoverBackgrounds() {
+            // DISABLED TO PREVENT CSS CONFLICTS - Let pure CSS handle hover backgrounds
+            console.log('🚫 Extension hover background removal disabled to prevent transparency conflicts');
+            return;
+
             const createAntiHoverCSS = () => {
                 const existingStyle = document.getElementById('anti-extension-hover');
                 if (existingStyle) existingStyle.remove();
@@ -1161,6 +1165,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }, true);
 
+            // CONTEXT MENU ANTI-TRANSPARENCY PROTECTION
+            this.addContextMenuProtection();
+
             // Fix click events for menu items
             document.addEventListener('click', (event) => {
                 const target = event.target;
@@ -1187,7 +1194,96 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }, true);
 
-            console.log('🖱️ Mouse event fixes applied');
+            console.log('🖱️ Mouse event fixes applied with context menu protection');
+        }
+
+        // Anti-Transparency Protection for Context Menus
+        addContextMenuProtection() {
+            // Create mutation observer to watch for context menu creation
+            const contextMenuObserver = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.type === 'childList') {
+                        mutation.addedNodes.forEach((node) => {
+                            if (node.nodeType === 1) { // Element node
+                                // Check for context menu containers
+                                if (node.classList && node.classList.contains('context-view')) {
+                                    this.protectContextMenuElement(node);
+                                }
+                                // Check for context menus inside added nodes
+                                const contextMenus = node.querySelectorAll('.context-view, .monaco-menu');
+                                contextMenus.forEach(menu => this.protectContextMenuElement(menu));
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Observe the entire document for context menu creation
+            contextMenuObserver.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+
+            // Also protect existing context menus
+            document.querySelectorAll('.context-view, .monaco-menu').forEach(menu => {
+                this.protectContextMenuElement(menu);
+            });
+
+            console.log('🛡️ Context menu anti-transparency protection activated');
+        }
+
+        // Protect individual context menu element
+        protectContextMenuElement(element) {
+            if (element.dataset.transparencyProtected) return;
+            element.dataset.transparencyProtected = 'true';
+
+            // Force solid background immediately
+            this.forceContextMenuSolidBackground(element);
+
+            // Create observer for style changes on this element
+            const styleObserver = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                        // Re-apply solid background if style changed
+                        this.forceContextMenuSolidBackground(element);
+                    }
+                });
+            });
+
+            styleObserver.observe(element, {
+                attributes: true,
+                attributeFilter: ['style']
+            });
+
+            // Also protect child action items
+            element.querySelectorAll('.action-item').forEach(item => {
+                this.forceActionItemSolidBackground(item);
+            });
+        }
+
+        // Force solid background on context menu elements
+        forceContextMenuSolidBackground(element) {
+            const darkGray = '#212631';
+            const accent = '#353A5F';
+
+            element.style.setProperty('background', darkGray, 'important');
+            element.style.setProperty('background-color', darkGray, 'important');
+            element.style.setProperty('opacity', '1', 'important');
+            element.style.setProperty('backdrop-filter', 'none', 'important');
+            element.style.setProperty('border', `1px solid ${accent}`, 'important');
+
+            // Also set CSS variables
+            element.style.setProperty('--vscode-menu-background', darkGray, 'important');
+            element.style.setProperty('--vscode-menu-foreground', '#FFFFFF', 'important');
+        }
+
+        // Force solid background on action items
+        forceActionItemSolidBackground(element) {
+            const darkGray = '#212631';
+
+            element.style.setProperty('background', darkGray, 'important');
+            element.style.setProperty('background-color', darkGray, 'important');
+            element.style.setProperty('opacity', '1', 'important');
         }
 
         // Observe VS Code changes with enhanced hover monitoring
