@@ -85,6 +85,93 @@
 
 /* ===== SIDEBAR ===== */
 
+/* SOURCE CONTROL GIT SPECIFIC FIXES - Preserve original VS Code spacing and positioning */
+/* Activity bar source control icon */
+.monaco-workbench .part.activitybar .content .composite-bar .action-item[aria-label*="Source Control"] {
+    margin: 0 !important;
+    padding: 0 !important;
+    /* Let VS Code handle original positioning */
+}
+
+/* Status bar source control items - Preserve original spacing */
+.statusbar-item[id^="status.scm"] {
+    margin: 0 !important;
+    /* Preserve original padding and positioning from VS Code */
+    padding: initial !important;
+    position: relative !important;
+}
+
+.statusbar-item[id^="status.scm"] .statusbar-item-label {
+    /* Preserve original VS Code spacing */
+    padding: initial !important;
+    margin: initial !important;
+}
+
+/* Activity bar action item - Minimal parent context to prevent badge displacement */
+.activitybar .action-item {
+    color: var(--light-gray) !important;
+    /* Provide positioning context for badges without interfering with their styling */
+    position: relative !important;
+    overflow: visible !important;
+}
+
+/* Source control view icon in activity bar - Prevent conflicts */
+.codicon-source-control-view-icon {
+    /* Preserve original icon positioning */
+    margin: initial !important;
+    padding: initial !important;
+}
+
+/* SOURCE CONTROL SIDEBAR CONTENT - When source control is active in sidebar */
+.part.sidebar .content[data-default-view-id*="scm"] {
+    /* Reset aggressive sidebar overrides for source control */
+    margin: initial !important;
+    padding: initial !important;
+}
+
+.part.sidebar .content .split-view-container {
+    /* Preserve original split view spacing for source control panels */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Source control tree elements - Preserve indentation */
+.monaco-list .monaco-list-row[data-tree-item-id*="scm"] {
+    /* Don't override source control specific padding */
+    padding-left: initial !important;
+    margin: 0 !important;
+}
+
+/* Source control input boxes and forms - Preserve spacing */
+.scm-editor {
+    margin: initial !important;
+    padding: initial !important;
+}
+
+.scm-input {
+    margin: initial !important;
+    padding: initial !important;
+}
+
+/* STATUS BAR - Preserve all original spacing for source control items */
+.part.statusbar .left-items .statusbar-item {
+    /* Reset any aggressive overrides that might affect status bar layout */
+    position: relative !important;
+    display: flex !important;
+    margin: initial !important;
+    padding: initial !important;
+}
+
+/* Ensure status bar maintains proper layout flow */
+.part.statusbar .left-items {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    /* Reset any layout-breaking overrides */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 /* Side bar background - Professional gradient with smooth transition */
 .part.sidebar {
     background: var(--gradient-primary) !important;
@@ -551,17 +638,38 @@
 .part.activitybar {
     background: var(--gradient-subtle) !important;
     border-right: 1px solid var(--medium-gray) !important;
+    /* Ensure activity bar doesn't clip badges */
+    overflow: visible !important;
+}
+
+/* Activity bar composite bar - Badge overflow protection */
+.part.activitybar .composite-bar {
+    overflow: visible !important;
+}
+
+/* Activity bar actions container - Badge overflow protection */
+.part.activitybar .actions-container {
+    overflow: visible !important;
 }
 
 /* Activity bar items - Light gray inactive, lightest active */
 .activitybar .action-item {
     color: var(--light-gray) !important;
+    /* Ensure proper positioning context for badges */
+    position: relative !important;
+    overflow: visible !important;
 }
 
+/* Activity bar items - Light gray inactive, lightest active */
 .activitybar .action-item.checked {
     background: var(--gradient-accent) !important;
     border-radius: 8px !important;
     color: var(--lightest) !important;
+    /* Maintain positioning context for child badges */
+    position: relative !important;
+    overflow: visible !important;
+    /* Ensure badge container doesn't get clipped */
+    contain: none !important;
 }
 
 /* Panel (terminal, problems, etc.) - Primary dark background */
@@ -708,7 +816,7 @@ div.context-view div.monaco-menu ul.actions-container li.action-item:hover {
     color: var(--lightest) !important;
     opacity: 1 !important;
     /* Anti-JavaScript transparency protection */
-    animation: forceOpaque 0.1s forwards !important;
+    animation: forceContextMenuOpaque 0.1s forwards !important;
 }
 
 /* CSS Animation to force opacity and prevent JavaScript overrides - ENHANCED */
@@ -831,9 +939,9 @@ div.context-view div.monaco-menu {
 
 /* Notification Action Buttons */
 .notification-toast .notification-toast-contents .notification-toast-actions .monaco-button {
-    background: var(--deep-blue-purple-alpha) !important;
-    border: 1px solid var(--lavender-light-alpha) !important;
-    color: var(--cream-warm) !important;
+    background: var(--accent-alpha) !important;
+    border: 1px solid var(--light-gray) !important;
+    color: var(--lightest) !important;
     font-size: 12px !important;
     padding: 6px 12px !important;
     border-radius: 8px !important;
@@ -841,9 +949,9 @@ div.context-view div.monaco-menu {
 }
 
 .notification-toast .notification-toast-contents .notification-toast-actions .monaco-button:hover {
-    background: var(--medium-purple) !important;
+    background: var(--accent) !important;
     transform: translateY(-1px) !important;
-    box-shadow: 0 4px 12px var(--deep-blue-purple-alpha) !important;
+    box-shadow: 0 4px 12px var(--accent-alpha) !important;
 }
 
 /* Notification Close Button */
@@ -853,7 +961,7 @@ div.context-view div.monaco-menu {
     right: 8px !important;
     background: transparent !important;
     border: none !important;
-    color: var(--lavender-pale) !important;
+    color: var(--medium-gray) !important;
     font-size: 16px !important;
     cursor: pointer !important;
     padding: 4px !important;
@@ -862,8 +970,8 @@ div.context-view div.monaco-menu {
 }
 
 .notification-toast .notification-toast-close-button:hover {
-    background: var(--deep-blue-purple-alpha) !important;
-    color: var(--cream-warm) !important;
+    background: var(--accent-alpha) !important;
+    color: var(--lightest) !important;
 }
 
 /* Success Notification Variant */
@@ -877,7 +985,7 @@ div.context-view div.monaco-menu {
 
 /* Warning Notification Variant */
 .notification-toast.notification-toast-warning {
-    border-left: 4px solid var(--cream-warm) !important;
+    border-left: 4px solid var(--lightest) !important;
 }
 
 .notification-toast.notification-toast-warning .notification-source::before {
@@ -895,7 +1003,7 @@ div.context-view div.monaco-menu {
 
 /* Info Notification Variant */
 .notification-toast.notification-toast-info {
-    border-left: 4px solid var(--medium-purple) !important;
+    border-left: 4px solid var(--accent) !important;
 }
 
 .notification-toast.notification-toast-info .notification-source::before {
@@ -908,7 +1016,7 @@ div.context-view div.monaco-menu {
     bottom: 0 !important;
     left: 0 !important;
     height: 3px !important;
-    background: var(--cream-warm) !important;
+    background: var(--lightest) !important;
     border-radius: 0 0 16px 16px !important;
     transition: width 0.1s linear !important;
     opacity: 0.7 !important;
