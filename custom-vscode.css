@@ -277,7 +277,7 @@
     align-items: center !important;
     justify-items: center !important;
     background: var(--gradient-secondary) !important;
-    border-radius: 0 0 12px 12px !important;
+    border-radius: 0 0 12px 0 !important; /* Remove left-bottom corner rounding */
     padding: 8px 12px !important;
     margin: 0 !important; /* Remove margin that pushes content down */
 }
