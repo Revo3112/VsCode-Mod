@@ -1,5 +1,5 @@
 /* ========================================
-   VS Code Enhanced Script - Snow Animation & Command Palette
+   VS Code Enhanced Script - Snow Animation & Command Palette & Icon Replacement
    ======================================== */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -78,6 +78,272 @@ document.addEventListener('DOMContentLoaded', function() {
         if (treeWidget) treeWidget.style.opacity = 1;
     }
 });
+
+/* ========================================
+   ICON REPLACEMENT SYSTEM - PROGRAMMER THEME
+   ======================================== */
+
+(function() {
+    'use strict';
+
+    // Icon Configuration - Professional Programming Icons
+    const ICON_CONFIG = {
+        // Choose one of these iconic programmer symbols
+        icons: {
+            lightning: '⚡',      // Lightning bolt - represents speed/power
+            code: '{ }',         // Code brackets - classic programming symbol
+            terminal: '▶',       // Terminal prompt
+            gear: '⚙',          // Settings/configuration gear
+            lambda: 'λ',         // Lambda symbol - functional programming
+            hash: '#',           // Hash symbol - common in programming
+            brackets: '< />',    // XML/HTML brackets
+            diamond: '◆',        // Diamond shape - modern/clean
+            arrow: '→',          // Right arrow - progression/flow
+            star: '★'            // Star - achievement/excellence
+        },
+        selectedIcon: '⚡',  // Default: Lightning bolt for programmer power
+        iconColor: '#00ff41', // Matrix green color
+        iconSize: '18px',
+        animationEnabled: true
+    };
+
+    class IconReplacer {
+        constructor() {
+            this.observers = [];
+            this.init();
+        }
+
+        init() {
+            // Wait for VS Code to fully load
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => this.start());
+            } else {
+                setTimeout(() => this.start(), 1000);
+            }
+        }
+
+        start() {
+            console.log('🎯 Starting VS Code Icon Replacement...');
+
+            // Initial icon replacement
+            this.replaceIcon();
+
+            // Setup observers for dynamic updates
+            this.setupIconObserver();
+
+            // Retry replacement multiple times for reliability
+            [500, 1500, 3000].forEach(delay => {
+                setTimeout(() => this.replaceIcon(), delay);
+            });
+        }
+
+        replaceIcon() {
+            // Target the specific icon element in the titlebar
+            const iconSelectors = [
+                '.window-appicon',
+                '.titlebar-left .window-appicon',
+                '.part.titlebar .window-appicon',
+                '.monaco-workbench .part.titlebar .titlebar-left .window-appicon'
+            ];
+
+            let iconReplaced = false;
+
+            iconSelectors.forEach(selector => {
+                const iconElements = document.querySelectorAll(selector);
+
+                iconElements.forEach(iconElement => {
+                    if (iconElement && !iconElement.querySelector('.custom-programmer-icon')) {
+                        this.createCustomIcon(iconElement);
+                        iconReplaced = true;
+                    }
+                });
+            });
+
+            if (iconReplaced) {
+                console.log('✅ VS Code icon successfully replaced with programmer icon');
+            }
+
+            return iconReplaced;
+        }
+
+        createCustomIcon(originalIcon) {
+            // Hide the original VS Code icon
+            originalIcon.style.cssText += `
+                visibility: hidden !important;
+                position: relative !important;
+                display: block !important;
+            `;
+
+            // Create custom programmer icon
+            const customIcon = document.createElement('div');
+            customIcon.className = 'custom-programmer-icon';
+            customIcon.textContent = ICON_CONFIG.selectedIcon;
+
+            // Apply professional styling
+            customIcon.style.cssText = `
+                position: absolute !important;
+                left: 50% !important;
+                top: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                font-size: ${ICON_CONFIG.iconSize} !important;
+                font-weight: bold !important;
+                line-height: 1 !important;
+                color: ${ICON_CONFIG.iconColor} !important;
+                user-select: none !important;
+                pointer-events: none !important;
+                z-index: 1000 !important;
+                visibility: visible !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-shadow: 0 0 10px ${ICON_CONFIG.iconColor}40 !important;
+                font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', monospace !important;
+                ${ICON_CONFIG.animationEnabled ? `
+                    transition: all 0.3s ease !important;
+                    animation: iconGlow 2s ease-in-out infinite alternate !important;
+                ` : ''}
+            `;
+
+            // Add hover effects for interactivity
+            if (ICON_CONFIG.animationEnabled) {
+                customIcon.addEventListener('mouseenter', () => {
+                    customIcon.style.transform = 'translate(-50%, -50%) scale(1.2)';
+                    customIcon.style.textShadow = `0 0 15px ${ICON_CONFIG.iconColor}80`;
+                });
+
+                customIcon.addEventListener('mouseleave', () => {
+                    customIcon.style.transform = 'translate(-50%, -50%) scale(1)';
+                    customIcon.style.textShadow = `0 0 10px ${ICON_CONFIG.iconColor}40`;
+                });
+            }
+
+            // Insert the custom icon
+            originalIcon.appendChild(customIcon);
+
+            // Add custom styles for animation
+            if (ICON_CONFIG.animationEnabled) {
+                this.addIconStyles();
+            }
+        }
+
+        addIconStyles() {
+            if (document.getElementById('programmer-icon-styles')) return;
+
+            const style = document.createElement('style');
+            style.id = 'programmer-icon-styles';
+            style.textContent = `
+                @keyframes iconGlow {
+                    0% {
+                        text-shadow: 0 0 10px ${ICON_CONFIG.iconColor}40;
+                    }
+                    100% {
+                        text-shadow: 0 0 20px ${ICON_CONFIG.iconColor}80, 0 0 30px ${ICON_CONFIG.iconColor}40;
+                    }
+                }
+
+                .custom-programmer-icon {
+                    will-change: transform, text-shadow;
+                }
+
+                /* Ensure icon container has proper positioning */
+                .window-appicon {
+                    position: relative !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    width: 35px !important;
+                    height: 35px !important;
+                }
+            `;
+
+            document.head.appendChild(style);
+        }
+
+        setupIconObserver() {
+            // Create observer to watch for titlebar changes
+            const titlebarObserver = new MutationObserver((mutations) => {
+                let needsIconReplace = false;
+
+                mutations.forEach((mutation) => {
+                    if (mutation.type === 'childList') {
+                        mutation.addedNodes.forEach((node) => {
+                            if (node.nodeType === Node.ELEMENT_NODE) {
+                                // Check if titlebar or icon elements were added
+                                if (node.classList?.contains('titlebar') ||
+                                    node.classList?.contains('window-appicon') ||
+                                    node.querySelector?.('.window-appicon') ||
+                                    node.querySelector?.('.titlebar')) {
+                                    needsIconReplace = true;
+                                }
+                            }
+                        });
+                    }
+                });
+
+                if (needsIconReplace) {
+                    setTimeout(() => this.replaceIcon(), 100);
+                }
+            });
+
+            // Observe the main workbench for changes
+            const workbench = document.querySelector('.monaco-workbench') || document.body;
+            if (workbench) {
+                titlebarObserver.observe(workbench, {
+                    childList: true,
+                    subtree: true,
+                    attributes: false
+                });
+                this.observers.push(titlebarObserver);
+            }
+
+            // Also observe the titlebar directly if it exists
+            const titlebar = document.querySelector('.part.titlebar');
+            if (titlebar) {
+                const titlebarDirectObserver = new MutationObserver(() => {
+                    setTimeout(() => this.replaceIcon(), 50);
+                });
+
+                titlebarDirectObserver.observe(titlebar, {
+                    childList: true,
+                    subtree: true
+                });
+                this.observers.push(titlebarDirectObserver);
+            }
+        }
+
+        cleanup() {
+            this.observers.forEach(observer => observer.disconnect());
+            this.observers = [];
+
+            const styleElement = document.getElementById('programmer-icon-styles');
+            if (styleElement) styleElement.remove();
+
+            console.log('🧹 Icon Replacer cleaned up');
+        }
+    }
+
+    // Initialize icon replacer
+    const iconReplacer = new IconReplacer();
+
+    // Make it globally accessible for debugging
+    window.IconReplacer = iconReplacer;
+
+    // Cleanup on page unload
+    window.addEventListener('beforeunload', () => {
+        if (window.IconReplacer) {
+            window.IconReplacer.cleanup();
+        }
+    });
+
+    // Debug function for manual icon replacement
+    window.replaceVSCodeIcon = function(newIcon, color) {
+        if (newIcon) ICON_CONFIG.selectedIcon = newIcon;
+        if (color) ICON_CONFIG.iconColor = color;
+        iconReplacer.replaceIcon();
+        console.log(`🎯 Icon manually changed to: ${ICON_CONFIG.selectedIcon}`);
+    };
+
+})();
 
 /* ========================================
    SNOW ANIMATION SYSTEM

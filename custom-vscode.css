@@ -33,7 +33,7 @@
 .mtk3 {
     font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', monospace !important;
     font-style: italic !important;
-    color: var(--accent) !important;
+    color: var(--accent-alpha) !important;
 }
 
 /* Code canvas top shadow - Subtle accent shadow */
