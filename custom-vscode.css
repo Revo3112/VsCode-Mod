@@ -1,104 +1,96 @@
-/* Sophisticated Elite Color Palette Variables */
-/* Sophisticated Elegant Dark Color Palette Variables */
+/* Custom Dark Theme Color Palette Variables */
 :root {
-    /* Professional Dark Theme - Elegant Black Gradient System */
-    --lightest: #FFFFFF;        /* Pure white - Primary text, maximum contrast */
-    --light-gray: #B8BCC8;      /* Cool light gray - Secondary text, subtle elements */
-    --medium-gray: #6C7293;     /* Balanced gray-blue - Borders, inactive elements */
-    --dark-gray: #212631;       /* Black-90 - Secondary backgrounds, panels */
-    --darkest: #0A0E15;         /* Black-100 - Primary background, deep surfaces */
-    --accent: #353A5F;          /* Custom blue-gray - Selections, highlights, active */
+    /* Custom Color Palette - Clean Dark Theme */
+    --primary: #8c5cff;         /* Primary purple */
+    --primary-foreground: #ffffff; /* Primary text - pure white */
+    --secondary: #2a2c33;       /* Secondary dark gray */
+    --secondary-foreground: #f0f0f0; /* Secondary text - light gray */
+    --background: #1a1b1e;      /* Main background - dark */
+    --accent: #1e293b;          /* Accent dark blue-gray */
+    --accent-foreground: #79c0ff; /* Accent foreground - light blue */
 
-    /* Alpha Variants for Smooth Gradients and Layering */
-    --lightest-alpha: rgba(255, 255, 255, 0.9);
-    --light-gray-alpha: rgba(184, 188, 200, 0.8);
-    --medium-gray-alpha: rgba(108, 114, 147, 0.7);
-    --dark-gray-alpha: rgba(33, 38, 49, 0.9);
-    --darkest-alpha: rgba(10, 14, 21, 0.95);
-    --accent-alpha: rgba(53, 58, 95, 0.6);
+    /* Alpha Variants for Layering */
+    --primary-alpha: rgba(140, 92, 255, 0.8);
+    --secondary-alpha: rgba(42, 44, 51, 0.8);
+    --background-alpha: rgba(26, 27, 30, 0.95);
+    --accent-alpha: rgba(30, 41, 59, 0.8);
 
-    /* Gradient Combinations for Smooth Transitions */
-    --gradient-primary: linear-gradient(135deg, var(--darkest) 0%, var(--dark-gray) 100%);
-    --gradient-secondary: linear-gradient(90deg, var(--dark-gray) 0%, var(--darkest) 100%);
-    --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--dark-gray) 70%);
-    --gradient-subtle: linear-gradient(180deg, var(--dark-gray) 0%, var(--darkest) 100%);
-
-    /* Legacy Compatibility - Map to new professional colors */
-    --deep-blue-purple: #353A5F; /* Maps to custom blue-gray accent */
-    --dark-navy: #0A0E15; /* Maps to black-100 */
-    --medium-purple: #212631; /* Maps to black-90 */
-    --lavender-light: #B8BCC8; /* Maps to cool light gray */
-    --lavender-pale: #6C7293; /* Maps to medium gray */
-    --cream-warm: #FFFFFF; /* Maps to pure white */
-    --medium-purple-alpha: rgba(33, 38, 49, 0.7);
-    --dark-navy-alpha: rgba(10, 14, 21, 0.9);
-    --deep-blue-purple-alpha: rgba(53, 58, 95, 0.7);
+    /* Legacy Compatibility - Map to new custom colors */
+    --deep-blue-purple: #8c5cff; /* Maps to primary */
+    --dark-navy: #1a1b1e; /* Maps to background */
+    --medium-purple: #2a2c33; /* Maps to secondary */
+    --lavender-light: #f0f0f0; /* Maps to secondary foreground */
+    --lavender-pale: #79c0ff; /* Maps to accent foreground */
+    --cream-warm: #ffffff; /* Maps to primary foreground */
+    --medium-purple-alpha: rgba(42, 44, 51, 0.7);
+    --dark-navy-alpha: rgba(26, 27, 30, 0.9);
+    --deep-blue-purple-alpha: rgba(140, 92, 255, 0.7);
 }
 
 /* ===== EDITOR AREA ===== */
 
-/* Code comment style - Enhanced readability with medium gray */
+/* Code comment style - Enhanced readability with best coding fonts */
 .mtk3 {
-    font-family: 'Monaspace Radon', monospace !important;
+    font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', monospace !important;
     font-style: italic !important;
-    color: var(--medium-gray) !important;
+    color: var(--accent) !important;
 }
 
 /* Code canvas top shadow - Subtle accent shadow */
 .monaco-editor .scroll-decoration {
-    box-shadow: 0px 0px 20px var(--accent-alpha) !important;
+    box-shadow: 0px 0px 20px var(--primary-alpha) !important;
     top: -6px !important;
 }
 
 /* Match Text - High contrast selection */
 .currentFindMatchInline {
-    background: var(--accent) !important;
-    color: var(--lightest) !important;
+    background: var(--primary) !important;
+    color: var(--primary-foreground) !important;
     border-radius: 4px !important;
 }
 
 /* Editor background - Primary dark background */
 .monaco-editor .monaco-editor-background {
-    background: var(--darkest) !important;
+    background: var(--background) !important;
 }
 
 /* Line numbers - Subtle medium gray */
 .monaco-editor .line-numbers {
-    color: var(--medium-gray) !important;
+    color: var(--accent-foreground) !important;
 }
 
 /* Current line number - Bright primary text */
 .monaco-editor .current-line-number {
-    color: var(--lightest) !important;
+    color: var(--primary-foreground) !important;
     font-weight: bold !important;
 }
 
 /* Selection highlight - Accent with transparency */
 .monaco-editor .selected-text {
-    background: var(--accent-alpha) !important;
+    background: var(--primary-alpha) !important;
 }
 
 /* Cursor line - Dark gray highlight */
 .monaco-editor .current-line {
-    background: var(--dark-gray-alpha) !important;
+    background: var(--secondary-alpha) !important;
 }
 
 /* ===== SIDEBAR ===== */
-/* Side bar background - Professional gradient with smooth transition */
+/* Side bar background - Clean solid color */
 .part.sidebar {
-    background: var(--gradient-primary) !important;
-    box-shadow: 0px 0px 50px var(--accent-alpha) !important;
-    border-right: 1px solid var(--medium-gray) !important;
+    background: var(--secondary) !important;
+    box-shadow: 0px 0px 50px var(--primary-alpha) !important;
+    border-right: 1px solid var(--accent) !important;
 }
 
 /* File Explorer Selected Item - Preserve original positioning with proper indentation */
 .monaco-list.list_id_1 .monaco-list-row.selected {
-    background: var(--gradient-accent) !important;
+    background: var(--primary) !important;
     opacity: 1 !important;
 }
 
 .monaco-list.list_id_1 .monaco-list-row.selected .label-name {
-    color: var(--lightest) !important;
+    color: var(--primary-foreground) !important;
     opacity: 1 !important;
     font-weight: 500 !important;
 }
@@ -108,46 +100,46 @@
     display: none;
 }
 
-/* File Explorer Item Label - Professional typography with light gray text */
+/* File Explorer Item Label - Best coding fonts with modern typography */
 .monaco-tree .monaco-tree-row .label-name,
 .monaco-list .monaco-list-row .monaco-icon-label .label-name {
-    font-family: 'Geist Mono', monospace !important;
+    font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', monospace !important;
     font-size: 14px !important;
     font-weight: 400 !important;
-    color: var(--light-gray) !important;
+    color: var(--secondary-foreground) !important;
 }
 
 .explorer-item-edited {
-    font-family: Geist Mono !important;
+    font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', monospace !important;
     font-size: 14px !important;
-    background: var(--lightest-alpha) !important;
+    background: var(--primary-alpha) !important;
     border-radius: 4px !important;
 }
 
 /* Sidebar top shadow - Accent shadow */
 .monaco-scrollable-element>.shadow.top {
-    box-shadow: 0px 0px 10px var(--accent-alpha) !important;
+    box-shadow: 0px 0px 10px var(--primary-alpha) !important;
 }
 
-/* Sidebar title - Professional gradient background - No margin bottom */
+/* Sidebar title - Clean solid background */
 .composite.title {
-    background: var(--gradient-secondary) !important;
+    background: var(--accent) !important;
 }
 
 .composite.title h2 {
     font-weight: bold !important;
     font-size: 12px !important;
     text-transform: uppercase !important;
-    color: var(--lightest) !important;
+    color: var(--primary-foreground) !important;
     letter-spacing: 1px !important;
 }
 
-/* Scroll Bar - Elegant gradient using professional grays */
+/* Scroll Bar - Clean solid color */
 .slider {
     position: absolute !important;
     right: 1px !important;
     width: 3px !important;
-    background: var(--gradient-subtle) !important;
+    background: var(--accent) !important;
     border-radius: 2px !important;
     left: auto !important;
 }
@@ -156,37 +148,37 @@
 
 /* Tab background - Primary dark background */
 .tab {
-    background: var(--darkest) !important;
-    color: var(--light-gray) !important;
+    background: var(--background) !important;
+    color: var(--secondary-foreground) !important;
 }
 
-/* Active tab - Elegant gradient */
+/* Active tab - Primary color */
 .tab.active {
-    background: var(--gradient-accent) !important;
-    color: var(--lightest) !important;
+    background: var(--primary) !important;
+    color: var(--primary-foreground) !important;
 }
 
 /* Tab hover - Transparent accent */
 .tab:hover {
-    background: var(--accent-alpha) !important;
-    color: var(--lightest) !important;
+    background: var(--primary-alpha) !important;
+    color: var(--primary-foreground) !important;
 }
 
 /* ===== STATUSBAR ===== */
 
-/* Status bar - Smooth horizontal gradient */
+/* Status bar - Clean accent color */
 .part.statusbar {
-    background: linear-gradient(90deg, var(--accent), var(--dark-gray)) !important;
-    color: var(--lightest) !important;
+    background: var(--accent) !important;
+    color: var(--primary-foreground) !important;
 }
 
 /* Status bar items - Light gray text */
 .statusbar-item {
-    color: var(--light-gray) !important;
+    color: var(--accent-foreground) !important;
 }
 
 .statusbar-item:hover {
-    background: var(--darkest-alpha) !important;
+    background: var(--background-alpha) !important;
     border-radius: 4px !important;
 }
 
@@ -195,35 +187,35 @@
 /* Tooltip box style - REMOVE TRANSPARENCY ONLY */
 .monaco-editor-hover,
 .monaco-hover {
-    box-shadow: 0px 8px 32px var(--accent-alpha) !important;
-    background: var(--dark-gray) !important;
+    box-shadow: 0px 8px 32px var(--primary-alpha) !important;
+    background: var(--secondary) !important;
     backdrop-filter: none !important;
     border-radius: 16px !important;
-    border: 1px solid var(--light-gray) !important;
+    border: 1px solid var(--accent) !important;
     outline: 0px !important;
-    color: var(--lightest) !important;
+    color: var(--primary-foreground) !important;
 }
 
 .monaco-resizable-hover {
     border: none !important;
-    background: var(--dark-gray) !important;
+    background: var(--secondary) !important;
 }
 
 /* ===== TITLEBAR ===== */
 
 /* Titlebar background - Primary dark background */
 .titlebar {
-    background: var(--darkest) !important;
-    border-bottom: 1px solid var(--medium-gray) !important;
+    background: var(--background) !important;
+    border-bottom: 1px solid var(--accent) !important;
 }
 
 /* Project title's style at the top - Accent background */
 .monaco-workbench .part.titlebar>.titlebar-container>.titlebar-center>.window-title>.command-center .action-item.command-center-center {
     border: none !important;
-    background: var(--accent-alpha) !important;
+    background: var(--primary-alpha) !important;
     border-radius: 8px !important;
     padding: 4px 12px !important;
-    color: var(--lightest) !important;
+    color: var(--primary-foreground) !important;
 }
 
 /* Project Title */
@@ -242,7 +234,7 @@
 
 /* Search Label */
 .search-label {
-    font-family: 'Geist Mono' !important;
+    font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', monospace !important;
     font-size: 14px !important;
     color: var(--lavender-light) !important;
     display: block !important;
@@ -283,10 +275,10 @@
 .quick-input-widget {
     transform: translateY(-50%) !important;
     top: 50% !important;
-    box-shadow: 0px 16px 64px var(--accent-alpha) !important;
-    border: 2px solid var(--accent) !important;
+    box-shadow: 0px 16px 64px var(--primary-alpha) !important;
+    border: 2px solid var(--primary) !important;
     padding: 20px 20px 28px 20px !important;
-    background: var(--dark-gray) !important;
+    background: var(--secondary) !important;
     backdrop-filter: none !important;
     border-radius: 24px !important;
     -webkit-border-radius: 24px !important;
@@ -304,7 +296,7 @@
 .quick-input-list .monaco-list-row {
     border-radius: 8px !important;
     margin: 2px 0 !important;
-    color: var(--lightest) !important;
+    color: var(--primary-foreground) !important;
     -webkit-border-radius: 8px !important;
     -moz-border-radius: 8px !important;
     -ms-border-radius: 8px !important;
@@ -312,13 +304,13 @@
 }
 
 .quick-input-list .monaco-list-row:hover {
-    background: var(--accent-alpha) !important;
-    color: var(--lightest) !important;
+    background: var(--primary-alpha) !important;
+    color: var(--primary-foreground) !important;
 }
 
 .quick-input-list .monaco-list-row.focused {
-    background: var(--accent) !important;
-    color: var(--lightest) !important;
+    background: var(--primary) !important;
+    color: var(--primary-foreground) !important;
 }
 
 /* Remove background for lists */
@@ -330,12 +322,12 @@
 .quick-input-filter .monaco-inputbox {
     border-radius: 16px !important;
     padding: 18px !important;
-    border: 2px solid var(--accent) !important;
-    background: var(--darkest) !important;
-    font-family: "Geist Mono" !important;
+    border: 2px solid var(--primary) !important;
+    background: var(--background) !important;
+    font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', monospace !important;
     font-size: 16px !important;
     margin-bottom: 16px !important;
-    color: var(--lightest) !important;
+    color: var(--primary-foreground) !important;
     -webkit-border-radius: 16px !important;
     -moz-border-radius: 16px !important;
     -ms-border-radius: 16px !important;
@@ -343,8 +335,8 @@
 }
 
 .quick-input-filter .monaco-inputbox:focus {
-    border-color: var(--lightest) !important;
-    box-shadow: 0 0 0 2px var(--accent-alpha) !important;
+    border-color: var(--accent-foreground) !important;
+    box-shadow: 0 0 0 2px var(--primary-alpha) !important;
 }
 
 /* Command blur backdrop - REMOVE TRANSPARENCY ONLY */
@@ -352,7 +344,7 @@
     position: absolute !important;
     width: 100% !important;
     height: 100% !important;
-    background: var(--darkest-alpha) !important;
+    background: var(--background-alpha) !important;
     top: 0 !important;
     left: 0 !important;
     backdrop-filter: none !important;
@@ -361,9 +353,9 @@
 /* Actions after command palette text input */
 .quick-input-inline-action-bar .actions-container .action-item {
     margin-bottom: 16px !important;
-    background: var(--medium-purple-alpha) !important;
+    background: var(--secondary-alpha) !important;
     border-radius: 6px !important;
-    color: var(--lavender-light) !important;
+    color: var(--secondary-foreground) !important;
     -webkit-border-radius: 6px !important;
     -moz-border-radius: 6px !important;
     -ms-border-radius: 6px !important;
@@ -376,11 +368,10 @@
 
 /* Command palette's input box placeholder - IMPROVE CONTRAST */
 .monaco-inputbox input::placeholder {
-    color: var(--light-gray) !important;
+    color: var(--secondary-foreground) !important;
 }
 
 /* Monaco inputbox text */
 .monaco-inputbox input {
-    color: var(--lightest) !important;
+    color: var(--primary-foreground) !important;
 }
-
