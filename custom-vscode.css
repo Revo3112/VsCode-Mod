@@ -84,139 +84,19 @@
 }
 
 /* ===== SIDEBAR ===== */
-
-/* SOURCE CONTROL GIT SPECIFIC FIXES - Preserve original VS Code spacing and positioning */
-/* Activity bar source control icon */
-.monaco-workbench .part.activitybar .content .composite-bar .action-item[aria-label*="Source Control"] {
-    margin: 0 !important;
-    padding: 0 !important;
-    /* Let VS Code handle original positioning */
-}
-
-/* Status bar source control items - Preserve original spacing */
-.statusbar-item[id^="status.scm"] {
-    margin: 0 !important;
-    /* Preserve original padding and positioning from VS Code */
-    padding: initial !important;
-    position: relative !important;
-}
-
-.statusbar-item[id^="status.scm"] .statusbar-item-label {
-    /* Preserve original VS Code spacing */
-    padding: initial !important;
-    margin: initial !important;
-}
-
-/* Activity bar action item - Minimal parent context to prevent badge displacement */
-.activitybar .action-item {
-    color: var(--light-gray) !important;
-    /* Provide positioning context for badges without interfering with their styling */
-    position: relative !important;
-    overflow: visible !important;
-}
-
-/* Source control view icon in activity bar - Prevent conflicts */
-.codicon-source-control-view-icon {
-    /* Preserve original icon positioning */
-    margin: initial !important;
-    padding: initial !important;
-}
-
-/* SOURCE CONTROL SIDEBAR CONTENT - When source control is active in sidebar */
-.part.sidebar .content[data-default-view-id*="scm"] {
-    /* Reset aggressive sidebar overrides for source control */
-    margin: initial !important;
-    padding: initial !important;
-}
-
-.part.sidebar .content .split-view-container {
-    /* Preserve original split view spacing for source control panels */
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-/* Source control tree elements - Preserve indentation */
-.monaco-list .monaco-list-row[data-tree-item-id*="scm"] {
-    /* Don't override source control specific padding */
-    padding-left: initial !important;
-    margin: 0 !important;
-}
-
-/* Source control input boxes and forms - Preserve spacing */
-.scm-editor {
-    margin: initial !important;
-    padding: initial !important;
-}
-
-.scm-input {
-    margin: initial !important;
-    padding: initial !important;
-}
-
-/* STATUS BAR - Preserve all original spacing for source control items */
-.part.statusbar .left-items .statusbar-item {
-    /* Reset any aggressive overrides that might affect status bar layout */
-    position: relative !important;
-    display: flex !important;
-    margin: initial !important;
-    padding: initial !important;
-}
-
-/* Ensure status bar maintains proper layout flow */
-.part.statusbar .left-items {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    /* Reset any layout-breaking overrides */
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
 /* Side bar background - Professional gradient with smooth transition */
 .part.sidebar {
     background: var(--gradient-primary) !important;
     box-shadow: 0px 0px 50px var(--accent-alpha) !important;
     border-right: 1px solid var(--medium-gray) !important;
-    /* Reset padding to preserve original VS Code layout */
-    padding: 0 !important;
-    margin: 0 !important;
 }
 
 /* File Explorer Selected Item - Preserve original positioning with proper indentation */
 .monaco-list.list_id_1 .monaco-list-row.selected {
     background: var(--gradient-accent) !important;
     opacity: 1 !important;
-    /* Remove borders and border-radius that affect positioning */
-    border: none !important;
-    border-radius: 0 !important;
-    /* Keep the indentation intact - DON'T override padding-left */
-    margin: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    padding-right: 0 !important;
-    /* Let the aria-level rules handle padding-left */
 }
 
-/* File Explorer hover effect - Preserve original positioning with proper indentation */
-.monaco-list.list_id_1 .monaco-list-row:hover {
-    background: var(--accent-alpha) !important;
-    /* Remove border-radius that affects positioning */
-    border-radius: 0 !important;
-    border: none !important;
-    /* Keep the indentation intact - DON'T override padding-left */
-    margin: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    padding-right: 0 !important;
-    /* Let the aria-level rules handle padding-left */
-}
-
-/* Hide the ">" chevron icon */
-.codicon-tree-item-expanded:before {
-    display: none !important;
-}
-
-/* List item label name - High contrast on selection */
 .monaco-list.list_id_1 .monaco-list-row.selected .label-name {
     color: var(--lightest) !important;
     opacity: 1 !important;
@@ -235,112 +115,6 @@
     font-size: 14px !important;
     font-weight: 400 !important;
     color: var(--light-gray) !important;
-    /* Preserve original positioning */
-    margin: 0 !important;
-    padding: 0 !important;
-    line-height: inherit !important;
-}
-
-/* File Explorer List Container - Preserve original structure */
-.monaco-list.list_id_1 {
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-/* CRITICAL: Twistie (expand/collapse) positioning fix */
-.monaco-list.list_id_1 .monaco-list-row .monaco-tl-twistie {
-    /* Position twistie correctly relative to the indentation */
-    margin-left: -16px !important;
-    width: 16px !important;
-    height: 22px !important;
-}
-
-/* File icons positioning - ensure proper spacing */
-.monaco-list.list_id_1 .monaco-list-row .file-icon,
-.monaco-list.list_id_1 .monaco-list-row .folder-icon {
-    margin-right: 6px !important;
-    margin-left: 0 !important;
-}
-
-/* File Explorer Items - REPLICATE VS CODE ORIGINAL INDENTATION SYSTEM */
-.monaco-list.list_id_1 .monaco-list-row {
-    /* Basic properties - keep VS Code defaults */
-    height: auto !important;
-    line-height: normal !important;
-    margin: 0 !important;
-    /* REMOVE custom padding - VS Code handles this via positioning */
-    padding: 0 !important;
-}
-
-/* VS CODE AUTHENTIC INDENTATION SYSTEM - Based on core-guide-indent analysis */
-/* Level 0 - Root files/folders */
-.monaco-list.list_id_1 .monaco-list-row[aria-level="1"] {
-    padding-left: 8px !important; /* Base padding for level 1 */
-}
-
-/* Level 1 - First nested level */
-.monaco-list.list_id_1 .monaco-list-row[aria-level="2"] {
-    padding-left: 43px !important; /* 8px + 35px indentation */
-}
-
-/* Level 2 - Second nested level */
-.monaco-list.list_id_1 .monaco-list-row[aria-level="3"] {
-    padding-left: 78px !important; /* 8px + (35px * 2) */
-}
-
-/* Level 3 - Third nested level */
-.monaco-list.list_id_1 .monaco-list-row[aria-level="4"] {
-    padding-left: 113px !important; /* 8px + (35px * 3) */
-}
-
-/* Level 4 - Fourth nested level */
-.monaco-list.list_id_1 .monaco-list-row[aria-level="5"] {
-    padding-left: 148px !important; /* 8px + (35px * 4) */
-}
-
-/* Level 5 and beyond - Dynamic formula */
-.monaco-list.list_id_1 .monaco-list-row[aria-level="6"] {
-    padding-left: 183px !important; /* 8px + (35px * 5) */
-}
-
-.monaco-list.list_id_1 .monaco-list-row[aria-level="7"] {
-    padding-left: 218px !important; /* 8px + (35px * 6) */
-}
-
-/* Explorer Folder Container - Preserve original structure */
-.explorer-folders-view {
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-/* Tree/List indentation - BASED ON VS CODE CORE-GUIDE SYSTEM */
-.monaco-tree .monaco-tree-row,
-.monaco-list .monaco-list-row {
-    /* Don't interfere with the aria-level indentation system */
-    margin: 0 !important;
-    text-indent: 0 !important;
-    /* Let the specific aria-level rules handle padding-left */
-}
-
-/* File/Folder Icons - minimal reset */
-.monaco-icon-label {
-    padding-left: 0 !important;
-    margin: 0 !important;
-}
-
-/* REMOVE CONFLICTING OVERRIDES - Clean up previous resets */
-.monaco-workbench .part.sidebar .monaco-list .monaco-list-row {
-    /* Don't override the aria-level specific padding rules */
-    margin: 0 !important;
-    /* Let aria-level rules handle padding-left */
-}
-
-/* Tree components - minimal interference */
-.monaco-tl-indent,
-.monaco-tl-twistie,
-.monaco-tl-contents {
-    /* Only reset problematic properties, keep VS Code positioning */
-    margin: 0 !important;
 }
 
 .explorer-item-edited {
@@ -348,25 +122,16 @@
     font-size: 14px !important;
     background: var(--lightest-alpha) !important;
     border-radius: 4px !important;
-    padding: 2px 4px !important;
 }
 
 /* Sidebar top shadow - Accent shadow */
 .monaco-scrollable-element>.shadow.top {
     box-shadow: 0px 0px 10px var(--accent-alpha) !important;
-    top: -3px !important;
 }
 
 /* Sidebar title - Professional gradient background - No margin bottom */
 .composite.title {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-items: center !important;
     background: var(--gradient-secondary) !important;
-    border-radius: 0 0 12px 0 !important; /* Remove left-bottom corner rounding */
-    padding: 8px 12px !important;
-    margin: 0 !important; /* Remove margin that pushes content down */
 }
 
 .composite.title h2 {
@@ -392,7 +157,6 @@
 /* Tab background - Primary dark background */
 .tab {
     background: var(--darkest) !important;
-    border-right: 1px solid var(--medium-gray) !important;
     color: var(--light-gray) !important;
 }
 
@@ -400,7 +164,6 @@
 .tab.active {
     background: var(--gradient-accent) !important;
     color: var(--lightest) !important;
-    border-bottom: 2px solid var(--lightest) !important;
 }
 
 /* Tab hover - Transparent accent */
@@ -415,7 +178,6 @@
 .part.statusbar {
     background: linear-gradient(90deg, var(--accent), var(--dark-gray)) !important;
     color: var(--lightest) !important;
-    border-top: 1px solid var(--light-gray) !important;
 }
 
 /* Status bar items - Light gray text */
