@@ -244,16 +244,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 .custom-programmer-icon {
                     will-change: transform, text-shadow;
                 }
-
-                /* Ensure icon container has proper positioning */
-                .window-appicon {
-                    position: relative !important;
-                    display: flex !important;
-                    align-items: center !important;
-                    justify-content: center !important;
-                    width: 35px !important;
-                    height: 35px !important;
-                }
             `;
 
             document.head.appendChild(style);

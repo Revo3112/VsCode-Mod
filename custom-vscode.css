@@ -33,7 +33,7 @@
 .mtk3 {
     font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', monospace !important;
     font-style: italic !important;
-    color: var(--accent-alpha) !important;
+    color: var(--accent-foreground) !important;
 }
 
 /* Code canvas top shadow - Subtle accent shadow */
@@ -220,7 +220,7 @@
 
 /* Project Title */
 .titlebar-left {
-    justify-content: flex-end !important;
+    justify-content: flex-start !important;
     flex-grow: 0 !important;
     width: 75px !important;
 }
