@@ -289,6 +289,10 @@
     background: var(--dark-gray) !important;
     backdrop-filter: none !important;
     border-radius: 24px !important;
+    -webkit-border-radius: 24px !important;
+    -moz-border-radius: 24px !important;
+    -ms-border-radius: 24px !important;
+    -o-border-radius: 24px !important;
 }
 
 .quick-input-list, .quick-input-list .list_id_6 {
@@ -301,6 +305,10 @@
     border-radius: 8px !important;
     margin: 2px 0 !important;
     color: var(--lightest) !important;
+    -webkit-border-radius: 8px !important;
+    -moz-border-radius: 8px !important;
+    -ms-border-radius: 8px !important;
+    -o-border-radius: 8px !important;
 }
 
 .quick-input-list .monaco-list-row:hover {
@@ -328,6 +336,10 @@
     font-size: 16px !important;
     margin-bottom: 16px !important;
     color: var(--lightest) !important;
+    -webkit-border-radius: 16px !important;
+    -moz-border-radius: 16px !important;
+    -ms-border-radius: 16px !important;
+    -o-border-radius: 16px !important;
 }
 
 .quick-input-filter .monaco-inputbox:focus {
@@ -352,6 +364,10 @@
     background: var(--medium-purple-alpha) !important;
     border-radius: 6px !important;
     color: var(--lavender-light) !important;
+    -webkit-border-radius: 6px !important;
+    -moz-border-radius: 6px !important;
+    -ms-border-radius: 6px !important;
+    -o-border-radius: 6px !important;
 }
 
 .quick-input-header {
@@ -368,418 +384,3 @@
     color: var(--lightest) !important;
 }
 
-/* ===== ADDITIONAL ENHANCEMENTS ===== */
-
-/* Welcome screen */
-.editor-group-watermark {
-    max-width: none !important;
-    background: var(--dark-navy) !important;
-    color: var(--lavender-light) !important;
-}
-
-/* Scrollbar track */
-.monaco-scrollable-element .scrollbar {
-    background: var(--dark-navy-alpha) !important;
-}
-
-/* Mini scrollbar */
-.monaco-editor .minimap {
-    background: var(--dark-navy-alpha) !important;
-    border-left: 1px solid var(--medium-purple) !important;
-}
-
-/* Breadcrumbs */
-.breadcrumbs-control {
-    background: var(--medium-purple-alpha) !important;
-    color: var(--lavender-light) !important;
-    border-radius: 8px !important;
-    padding: 4px 8px !important;
-}
-
-/* Activity bar - Accent background */
-.part.activitybar {
-    background: var(--gradient-subtle) !important;
-    border-right: 1px solid var(--medium-gray) !important;
-    /* Ensure activity bar doesn't clip badges */
-    overflow: visible !important;
-}
-
-/* Activity bar composite bar - Badge overflow protection */
-.part.activitybar .composite-bar {
-    overflow: visible !important;
-}
-
-/* Activity bar actions container - Badge overflow protection */
-.part.activitybar .actions-container {
-    overflow: visible !important;
-}
-
-/* Activity bar items - Light gray inactive, lightest active */
-.activitybar .action-item {
-    color: var(--light-gray) !important;
-    /* Ensure proper positioning context for badges */
-    position: relative !important;
-    overflow: visible !important;
-}
-
-/* Activity bar items - Light gray inactive, lightest active */
-.activitybar .action-item.checked {
-    background: var(--gradient-accent) !important;
-    border-radius: 8px !important;
-    color: var(--lightest) !important;
-    /* Maintain positioning context for child badges */
-    position: relative !important;
-    overflow: visible !important;
-    /* Ensure badge container doesn't get clipped */
-    contain: none !important;
-}
-
-/* Panel (terminal, problems, etc.) - Primary dark background */
-.part.panel {
-    background: var(--darkest) !important;
-    border-top: 1px solid var(--medium-gray) !important;
-}
-
-/* Panel tabs - Light gray inactive, lightest active */
-.panel .composite.title .actions-container .action-item {
-    color: var(--light-gray) !important;
-}
-
-.panel .composite.title .actions-container .action-item.checked {
-    color: var(--lightest) !important;
-    border-bottom: 2px solid var(--lightest) !important;
-}
-
-/* Terminal - Primary dark background */
-.terminal-outer-container {
-    background: var(--darkest) !important;
-}
-
-/* ===== CONTEXT MENU - MAXIMUM STRENGTH TRANSPARENCY REMOVAL ===== */
-
-/* Primary Context Menu Container - All Possible Variations */
-.context-view.monaco-component.bottom.left,
-.context-view.monaco-component.top.left,
-.context-view.monaco-component.bottom.right,
-.context-view.monaco-component.top.right,
-.context-view.monaco-component.monaco-menu-container.bottom.left,
-.context-view.monaco-component.monaco-menu-container.top.left,
-.context-view.monaco-component.monaco-menu-container.bottom.right,
-.context-view.monaco-component.monaco-menu-container.top.right,
-div.context-view.monaco-component,
-div.context-view.monaco-component.monaco-menu-container {
-    background: var(--dark-gray) !important;
-    background-color: var(--dark-gray) !important;
-    border: 1px solid var(--accent) !important;
-    border-radius: 8px !important;
-    box-shadow: 0 8px 32px var(--accent-alpha) !important;
-    backdrop-filter: none !important;
-    opacity: 1 !important;
-    /* Force VS Code variables */
-    --vscode-menu-background: var(--dark-gray) !important;
-    --vscode-menu-foreground: var(--lightest) !important;
-    /* Ensure visibility */
-    visibility: visible !important;
-    /* Ultra-high z-index to ensure on top */
-    z-index: 999999 !important;
-}
-
-/* Monaco Menu inside Context View - Maximum Coverage */
-.context-view .monaco-menu,
-.context-view.monaco-component .monaco-menu,
-.context-view.monaco-component.monaco-menu-container .monaco-menu,
-.monaco-menu-container .monaco-menu,
-div.context-view div.monaco-menu {
-    background: var(--dark-gray) !important;
-    background-color: var(--dark-gray) !important;
-    border: 1px solid var(--accent) !important;
-    backdrop-filter: none !important;
-    color: var(--lightest) !important;
-    opacity: 1 !important;
-    /* Force VS Code menu variables */
-    --vscode-menu-background: var(--dark-gray) !important;
-    --vscode-menu-foreground: var(--lightest) !important;
-    --vscode-menu-border: var(--accent) !important;
-}
-
-/* Action Items inside Context Menu - Anti-Transparent Protection */
-.context-view .monaco-menu .monaco-action-bar .action-item,
-.context-view.monaco-component .monaco-action-bar .action-item,
-.context-view.monaco-component.monaco-menu-container .monaco-action-bar .action-item,
-.monaco-menu-container .monaco-menu .monaco-action-bar .action-item,
-div.context-view div.monaco-menu ul.actions-container li.action-item {
-    color: var(--lightest) !important;
-    background: var(--dark-gray) !important;
-    background-color: var(--dark-gray) !important;
-    opacity: 1 !important;
-    /* Override any JavaScript-applied transparency */
-    --vscode-menu-background: var(--dark-gray) !important;
-    --vscode-menu-selectionBackground: var(--accent-alpha) !important;
-}
-
-/* Action Items Hover State */
-.context-view .monaco-menu .monaco-action-bar .action-item:hover,
-.context-view.monaco-component .monaco-action-bar .action-item:hover,
-.context-view.monaco-component.monaco-menu-container .monaco-action-bar .action-item:hover,
-.monaco-menu-container .monaco-menu .monaco-action-bar .action-item:hover,
-div.context-view div.monaco-menu ul.actions-container li.action-item:hover {
-    background: var(--accent-alpha) !important;
-    background-color: var(--accent-alpha) !important;
-    color: var(--lightest) !important;
-    opacity: 1 !important;
-    /* Override any JavaScript-applied transparency on hover */
-    --vscode-menu-hoverBackground: var(--accent-alpha) !important;
-}
-
-/* Notification center - REMOVE TRANSPARENCY ONLY */
-.notifications-center {
-    background: var(--dark-gray) !important;
-    border: 1px solid var(--accent) !important;
-    border-radius: 12px !important;
-    backdrop-filter: none !important;
-}
-
-/* Button styles - IMPROVE CONTRAST ONLY */
-.monaco-button {
-    background: var(--accent) !important;
-    color: var(--lightest) !important;
-    border-radius: 8px !important;
-    border: 1px solid var(--accent) !important;
-}
-
-.monaco-button:hover {
-    background: var(--darkest) !important;
-    border-color: var(--lightest) !important;
-}
-
-/* Input fields - REMOVE TRANSPARENCY ONLY */
-.monaco-inputbox {
-    background: var(--darkest) !important;
-    border: 1px solid var(--accent) !important;
-    border-radius: 6px !important;
-    color: var(--lightest) !important;
-}
-
-.monaco-inputbox:focus {
-    border-color: var(--lightest) !important;
-    box-shadow: 0 0 0 1px var(--accent-alpha) !important;
-}
-
-/* ===== ADDITIONAL POPUP FIXES - MINIMAL CHANGES ===== */
-
-/* Monaco Menu - REMOVE TRANSPARENCY ONLY - JAVASCRIPT-PROOF */
-.monaco-menu,
-.context-view .monaco-menu,
-.context-view.monaco-component .monaco-menu,
-.context-view.monaco-menu-container .monaco-menu {
-    background: var(--dark-gray) !important;
-    border: 1px solid var(--accent) !important;
-    backdrop-filter: none !important;
-    color: var(--lightest) !important;
-    opacity: 1 !important;
-    /* Anti-JavaScript transparency protection */
-    animation: forceContextMenuOpaque 0.1s forwards !important;
-}
-
-/* CSS Animation to force opacity and prevent JavaScript overrides - ENHANCED */
-@keyframes forceContextMenuOpaque {
-    from, to {
-        opacity: 1 !important;
-        background: var(--dark-gray) !important;
-        background-color: var(--dark-gray) !important;
-        --vscode-menu-background: var(--dark-gray) !important;
-        --vscode-menu-foreground: var(--lightest) !important;
-        visibility: visible !important;
-    }
-}
-
-/* Apply animation to all context menu variations */
-.context-view.monaco-component.bottom.left,
-.context-view.monaco-component.top.left,
-.context-view.monaco-component.bottom.right,
-.context-view.monaco-component.top.right,
-.context-view.monaco-component.monaco-menu-container.bottom.left,
-.context-view.monaco-component.monaco-menu-container.top.left,
-.context-view.monaco-component.monaco-menu-container.bottom.right,
-.context-view.monaco-component.monaco-menu-container.top.right,
-div.context-view.monaco-component,
-div.context-view.monaco-component.monaco-menu-container {
-    /* Anti-JavaScript transparency protection */
-    animation: forceContextMenuOpaque 0.1s forwards !important;
-}
-
-/* Also apply to monaco menu elements */
-.context-view .monaco-menu,
-.context-view.monaco-component .monaco-menu,
-.context-view.monaco-component.monaco-menu-container .monaco-menu,
-.monaco-menu-container .monaco-menu,
-div.context-view div.monaco-menu {
-    animation: forceContextMenuOpaque 0.1s forwards !important;
-}
-
-/* Suggest Widget - REMOVE TRANSPARENCY ONLY */
-.suggest-widget {
-    background: var(--dark-gray) !important;
-    border: 1px solid var(--accent) !important;
-    backdrop-filter: none !important;
-    color: var(--lightest) !important;
-}
-
-/* ========================================
-   🤖 SUPER AI FRONTEND DEVELOPER MODE
-   ADVANCED NOTIFICATION POPUP SYSTEM
-   ======================================== */
-
-/* Notification Container - Professional Positioning */
-.notifications-toasts {
-    position: fixed !important;
-    top: 80px !important;
-    right: 20px !important;
-    z-index: 1000000 !important;
-    max-width: 400px !important;
-    pointer-events: none !important;
-}
-
-/* Individual Notification Toast - REMOVE TRANSPARENCY ONLY */
-.notification-toast {
-    background: var(--dark-gray) !important;
-    border: 2px solid var(--accent) !important;
-    border-radius: 16px !important;
-    margin-bottom: 12px !important;
-    padding: 16px 20px !important;
-    box-shadow: 0 8px 32px var(--accent-alpha) !important;
-    backdrop-filter: none !important;
-    pointer-events: auto !important;
-    transform: translateX(420px) scale(0.8) !important;
-    opacity: 0 !important;
-    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-}
-
-/* Toast Entrance Animation */
-.notification-toast.notification-slide-in {
-    transform: translateX(0) scale(1) !important;
-    opacity: 1 !important;
-}
-
-/* Toast Exit Animation */
-.notification-toast.notification-slide-out {
-    transform: translateX(420px) scale(0.8) rotate(5deg) !important;
-    opacity: 0 !important;
-    transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) !important;
-}
-
-/* Notification Content Styling - HIGH CONTRAST */
-.notification-toast .notification-toast-contents {
-    color: var(--lightest) !important;
-    font-family: 'Inter', sans-serif !important;
-    font-size: 14px !important;
-    line-height: 1.5 !important;
-}
-
-/* Notification Title - BRIGHT CONTRAST */
-.notification-toast .notification-toast-contents .notification-source {
-    color: var(--lightest) !important;
-    font-weight: 600 !important;
-    font-size: 15px !important;
-    margin-bottom: 4px !important;
-    display: block !important;
-}
-
-/* Notification Message - HIGH READABILITY */
-.notification-toast .notification-toast-contents .notification-message {
-    color: var(--light-gray) !important;
-    font-weight: 400 !important;
-    opacity: 1 !important;
-}
-
-/* Notification Actions */
-.notification-toast .notification-toast-contents .notification-toast-actions {
-    margin-top: 12px !important;
-    display: flex !important;
-    gap: 8px !important;
-}
-
-/* Notification Action Buttons */
-.notification-toast .notification-toast-contents .notification-toast-actions .monaco-button {
-    background: var(--accent-alpha) !important;
-    border: 1px solid var(--light-gray) !important;
-    color: var(--lightest) !important;
-    font-size: 12px !important;
-    padding: 6px 12px !important;
-    border-radius: 8px !important;
-    transition: all 0.3s ease !important;
-}
-
-.notification-toast .notification-toast-contents .notification-toast-actions .monaco-button:hover {
-    background: var(--accent) !important;
-    transform: translateY(-1px) !important;
-    box-shadow: 0 4px 12px var(--accent-alpha) !important;
-}
-
-/* Notification Close Button */
-.notification-toast .notification-toast-close-button {
-    position: absolute !important;
-    top: 8px !important;
-    right: 8px !important;
-    background: transparent !important;
-    border: none !important;
-    color: var(--medium-gray) !important;
-    font-size: 16px !important;
-    cursor: pointer !important;
-    padding: 4px !important;
-    border-radius: 4px !important;
-    transition: all 0.2s ease !important;
-}
-
-.notification-toast .notification-toast-close-button:hover {
-    background: var(--accent-alpha) !important;
-    color: var(--lightest) !important;
-}
-
-/* Success Notification Variant */
-.notification-toast.notification-toast-success {
-    border-left: 4px solid #4CAF50 !important;
-}
-
-.notification-toast.notification-toast-success .notification-source::before {
-    content: "✅ " !important;
-}
-
-/* Warning Notification Variant */
-.notification-toast.notification-toast-warning {
-    border-left: 4px solid var(--lightest) !important;
-}
-
-.notification-toast.notification-toast-warning .notification-source::before {
-    content: "⚠️ " !important;
-}
-
-/* Error Notification Variant */
-.notification-toast.notification-toast-error {
-    border-left: 4px solid #f44336 !important;
-}
-
-.notification-toast.notification-toast-error .notification-source::before {
-    content: "❌ " !important;
-}
-
-/* Info Notification Variant */
-.notification-toast.notification-toast-info {
-    border-left: 4px solid var(--accent) !important;
-}
-
-.notification-toast.notification-toast-info .notification-source::before {
-    content: "ℹ️ " !important;
-}
-
-/* Notification Progress Bar */
-.notification-toast .notification-toast-progress {
-    position: absolute !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    height: 3px !important;
-    background: var(--lightest) !important;
-    border-radius: 0 0 16px 16px !important;
-    transition: width 0.1s linear !important;
-    opacity: 0.7 !important;
-}
