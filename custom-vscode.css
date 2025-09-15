@@ -25,51 +25,261 @@
     color: var(--accent-foreground) !important;
     opacity: 0.6;
 }
+/* ===== ULTRA BRIGHT PROGRAMMER-OPTIMIZED COLORS ===== */
+/* Designed specifically for transparent backgrounds with maximum readability and semantic meaning */
 
-/* Code canvas top shadow - Subtle accent shadow */
-.monaco-editor .scroll-decoration {
-    box-shadow: 0px 0px 20px var(--primary-alpha) !important;
-    top: -6px !important;
+/* mtk1 - Default Text (Ultra White dengan slight glow) */
+.mtk1 {
+    color: #FFFFFF !important;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.3) !important;
+    font-weight: 400 !important;
 }
 
-/* Match Text - High contrast selection */
-.currentFindMatchInline {
-    background: var(--primary) !important;
-    color: var(--primary-foreground) !important;
-    border-radius: 4px !important;
+/* mtk2 - Comments (Bright Cyan - Easy to distinguish) */
+.mtk2 {
+    color: #00FFFF !important; /* Electric cyan */
+    text-shadow: 0 0 3px rgba(0, 255, 255, 0.4) !important;
+    font-style: italic !important;
+    opacity: 0.85;
 }
 
-/* Editor background - Primary dark background */
-.monaco-editor .monaco-editor-background {
-    background: var(--background) !important;
+/* mtk3 - Comments Alternative (match your existing) */
+.mtk3 {
+    color: #00E5FF !important; /* Bright cyan blue */
+    text-shadow: 0 0 3px rgba(0, 229, 255, 0.4) !important;
+    font-style: italic !important;
+    opacity: 0.8;
 }
 
-/* Editor margin/gutter background */
-.monaco-editor .margin {
-    background: var(--background) !important;
+/* mtk4 - Keywords (Electric Magenta - Commands stand out) */
+.mtk4 {
+    color: #FF0080 !important; /* Hot magenta */
+    text-shadow: 0 0 4px rgba(255, 0, 128, 0.5) !important;
+    font-weight: 600 !important;
 }
 
-/* Line numbers - Subtle medium gray */
-.monaco-editor .line-numbers {
-    color: var(--accent-foreground) !important;
-    opacity: 0.5;
+/* mtk5 - Strings (Neon Lime Green - Easy identification) */
+.mtk5 {
+    color: #32FF32 !important; /* Bright lime green */
+    text-shadow: 0 0 3px rgba(50, 255, 50, 0.4) !important;
+    font-weight: 400 !important;
 }
 
-/* Current line number - Bright primary text */
-.monaco-editor .current-line-number {
-    color: var(--primary) !important;
-    font-weight: bold !important;
-    opacity: 1;
+/* mtk6 - Numbers (Ultra Bright Coral - Mathematical elements) */
+.mtk6 {
+    color: #FF4444 !important; /* Ultra bright coral red - SANGAT BERBEDA dari yellow */
+    text-shadow: 0 0 4px rgba(255, 68, 68, 0.5) !important;
+    font-weight: 600 !important;
 }
 
-/* Selection highlight - Accent with transparency */
-.monaco-editor .selected-text {
-    background: var(--primary-alpha) !important;
+/* mtk7 - Functions (Electric Turquoise - Clear distinction) */
+.mtk7 {
+    color: #00DDDD !important; /* Bright turquoise - lebih terang */
+    text-shadow: 0 0 4px rgba(0, 221, 221, 0.5) !important;
+    font-weight: 600 !important;
 }
 
-/* Cursor line - Dark gray highlight */
-.monaco-editor .current-line {
-    background: var(--secondary-alpha) !important;
+/* mtk8 - Variables (Bright Neon Orange - Variable identification) */
+.mtk8 {
+    color: #FF9900 !important; /* Bright neon orange - lebih terang */
+    text-shadow: 0 0 4px rgba(255, 153, 0, 0.5) !important;
+    font-weight: 500 !important;
+}
+
+/* mtk9 - Classes/Types (Bright Electric Purple - Structural elements) */
+.mtk9 {
+    color: #BB77FF !important; /* Bright electric purple - lebih terang */
+    text-shadow: 0 0 4px rgba(187, 119, 255, 0.5) !important;
+    font-weight: 700 !important;
+}
+
+/* mtk10 - Constants (Hot Magenta Pink - Important values) */
+.mtk10 {
+    color: #FF3399 !important; /* Hot magenta pink - lebih terang */
+    text-shadow: 0 0 4px rgba(255, 51, 153, 0.5) !important;
+    font-weight: 700 !important;
+}
+
+/* mtk11 - Operators (Bright Acid Green - Mathematical ops) */
+.mtk11 {
+    color: #66FF66 !important; /* Bright acid green - lebih terang */
+    text-shadow: 0 0 4px rgba(102, 255, 102, 0.5) !important;
+    font-weight: 600 !important;
+}
+
+/* mtk12 - Brackets/Delimiters (Bright Salmon - Structure) */
+.mtk12 {
+    color: #FF7777 !important; /* Bright salmon - lebih terang */
+    text-shadow: 0 0 4px rgba(255, 119, 119, 0.5) !important;
+    font-weight: 600 !important;
+}
+
+/* mtk13 - HTML/XML Tags (Ultra Cyan - Markup) */
+.mtk13 {
+    color: #44FFFF !important; /* Ultra bright cyan - lebih terang */
+    text-shadow: 0 0 4px rgba(68, 255, 255, 0.5) !important;
+    font-weight: 600 !important;
+}
+
+/* mtk14 - HTML/XML Attributes (Bright Electric Yellow - Properties) */
+.mtk14 {
+    color: #FFEE33 !important; /* Bright electric yellow - lebih terang */
+    text-shadow: 0 0 4px rgba(255, 238, 51, 0.5) !important;
+    font-weight: 500 !important;
+}
+
+/* mtk15 - CSS Selectors (Ultra Bright Magenta - Selectors) */
+.mtk15 {
+    color: #FF66FF !important; /* Ultra bright magenta - lebih terang */
+    text-shadow: 0 0 4px rgba(255, 102, 255, 0.5) !important;
+    font-weight: 600 !important;
+}
+
+/* mtk16 - CSS Properties (Bright Electric Blue - Properties) */
+.mtk16 {
+    color: #5599FF !important; /* Bright electric blue - lebih terang */
+    text-shadow: 0 0 4px rgba(85, 153, 255, 0.5) !important;
+    font-weight: 500 !important;
+}
+
+/* mtk17 - CSS Values (Ultra Bright Lime - Values) */
+.mtk17 {
+    color: #99FF55 !important; /* Ultra bright lime - lebih terang */
+    text-shadow: 0 0 4px rgba(153, 255, 85, 0.5) !important;
+    font-weight: 500 !important;
+}
+
+/* mtk18 - RegExp (Bright Rose Pink - Pattern matching) */
+.mtk18 {
+    color: #FF77BB !important; /* Bright rose pink - lebih terang */
+    text-shadow: 0 0 4px rgba(255, 119, 187, 0.5) !important;
+    font-weight: 600 !important;
+}
+
+/* mtk19 - Escape Characters (Pure Bright Gold - Special chars) */
+.mtk19 {
+    color: #FFCC00 !important; /* Pure bright gold - SANGAT BERBEDA dari mtk6 */
+    text-shadow: 0 0 4px rgba(255, 204, 0, 0.5) !important;
+    font-weight: 600 !important;
+}
+
+/* mtk20 - Special Characters (Bright Electric Violet - Special syntax) */
+.mtk20 {
+    color: #AA44FF !important; /* Bright electric violet - lebih terang */
+    text-shadow: 0 0 4px rgba(170, 68, 255, 0.5) !important;
+    font-weight: 600 !important;
+}
+
+/* mtk21 - Error Text (Bright Red Alert - Critical) */
+.mtk21 {
+    color: #FF3333 !important; /* Bright red */
+    text-shadow: 0 0 5px rgba(255, 51, 51, 0.6) !important;
+    font-weight: 700 !important;
+    text-decoration: underline !important;
+    animation: pulse-error 2s infinite !important;
+}
+
+/* mtk22 - Warning Text (Amber Alert - Attention) */
+.mtk22 {
+    color: #FFA500 !important; /* Orange amber */
+    text-shadow: 0 0 4px rgba(255, 165, 0, 0.5) !important;
+    font-weight: 600 !important;
+}
+
+/* mtk23 - Info Text (Aqua Info - Information) */
+.mtk23 {
+    color: #00FFBF !important; /* Bright aqua */
+    text-shadow: 0 0 3px rgba(0, 255, 191, 0.4) !important;
+    font-weight: 500 !important;
+}
+
+/* mtk24 - Success Text (Neon Green - Success) */
+.mtk24 {
+    color: #00FF00 !important; /* Pure green */
+    text-shadow: 0 0 4px rgba(0, 255, 0, 0.5) !important;
+    font-weight: 600 !important;
+}
+
+/* mtk25 - Markdown Headings (Electric Rose - Headers) */
+.mtk25 {
+    color: #FF1493 !important; /* Deep pink */
+    text-shadow: 0 0 4px rgba(255, 20, 147, 0.5) !important;
+    font-weight: 700 !important;
+}
+
+/* ===== SEMANTIC COLOR ENHANCEMENTS ===== */
+
+/* Property names (like 'background', 'color', etc.) */
+.mtk-property {
+    color: #FF8C69 !important; /* Salmon */
+    text-shadow: 0 0 3px rgba(255, 140, 105, 0.4) !important;
+}
+
+/* Values after colons */
+.mtk-value {
+    color: #98FB98 !important; /* Pale green */
+    text-shadow: 0 0 3px rgba(152, 251, 152, 0.4) !important;
+}
+
+/* CSS units (px, em, rem, %, etc.) */
+.mtk-unit {
+    color: #F0E68C !important; /* Khaki */
+    text-shadow: 0 0 2px rgba(240, 230, 140, 0.4) !important;
+}
+
+/* ===== ANIMATIONS FOR CRITICAL ELEMENTS ===== */
+@keyframes pulse-error {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+@keyframes glow-important {
+    0% { text-shadow: 0 0 3px currentColor; }
+    50% { text-shadow: 0 0 8px currentColor, 0 0 12px currentColor; }
+    100% { text-shadow: 0 0 3px currentColor; }
+}
+
+/* ===== SPECIAL CLASSES FOR ENHANCED READABILITY ===== */
+
+/* Apply to important keywords */
+.mtk-important {
+    animation: glow-important 3s infinite !important;
+}
+
+/* High contrast mode untuk text saja - TANPA background */
+.mtk-ultra-contrast {
+    filter: brightness(1.3) contrast(1.2) !important;
+    text-shadow: 0 0 5px currentColor !important;
+}
+
+/* For extremely bright elements that need extra visibility */
+.mtk-super-bright {
+    filter: brightness(1.2) saturate(1.3) !important;
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor !important;
+}
+
+/* ===== PROGRAMMER-SPECIFIC OPTIMIZATIONS ===== */
+
+/* Make important syntax elements more visible on transparent backgrounds */
+.mtk4, .mtk7, .mtk9, .mtk10 {
+    background: rgba(0, 0, 0, 0.2) !important;
+    border-radius: 2px !important;
+    padding: 0 1px !important;
+}
+
+/* Enhance string visibility */
+.mtk5 {
+    background: rgba(0, 40, 0, 0.3) !important;
+    border-radius: 2px !important;
+    padding: 0 1px !important;
+}
+
+/* Enhance comment visibility */
+.mtk2, .mtk3 {
+    background: rgba(0, 40, 40, 0.2) !important;
+    border-radius: 2px !important;
+    padding: 0 1px !important;
 }
 
 /* ===== SIDEBAR ===== */
@@ -209,10 +419,15 @@
 
 /* ===== TITLEBAR ===== */
 
-/* Titlebar background - Primary dark background */
-.titlebar {
+/* Main container for the entire top bar */
+.monaco-workbench .part.titlebar {
     background: var(--background) !important;
     border-bottom: 1px solid var(--accent) !important;
+}
+
+/* Container for the minimize, maximize, close buttons */
+.window-controls-container {
+    background: var(--background) !important;
 }
 
 /* Project title's style at the top - Accent background */
