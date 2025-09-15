@@ -16,15 +16,87 @@
     --accent-alpha: rgba(48, 48, 96, 0.8);
 }
 
-/* ===== EDITOR AREA ===== */
 
-/* Code comment style - Enhanced readability with best coding fonts */
-.mtk3 {
+/* ===== GLOBAL FONT SETTINGS ===== */
+/* Ensure editor and all text elements use the font */
+.monaco-editor, .monaco-editor-background,
+.monaco-workbench, .part, .composite,
+.monaco-list, .monaco-tree,
+input, textarea, select, button,
+.quick-input-widget, .command-center,
+.titlebar, .statusbar {
     font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', monospace !important;
-    font-style: italic !important;
-    color: var(--accent-foreground) !important;
-    opacity: 0.6;
 }
+/* ===== EDITOR AREA ===== */
+/* ===== CURSOR & ICONS FIXES ===== */
+
+/* Fix cursor visibility - Make it visible and properly colored */
+.cursors-layer .cursor {
+    display: block !important;
+    visibility: visible !important;
+    background-color: var(--accent-foreground) !important;
+    border-left: 2px solid var(--primary) !important;
+}
+
+/* ===== EDITOR BACKGROUND CONSISTENCY ===== */
+
+/* Main editor background - Match sidebar */
+.monaco-editor,
+.monaco-editor-background,
+.monaco-editor .monaco-editor-background {
+    background-color: var(--background) !important;
+}
+
+/* Editor Content Area */
+.monaco-editor .lines-content,
+.monaco-editor .view-lines,
+.monaco-editor .view-line {
+    background-color: transparent !important;
+}
+
+
+/* Line numbers area - Match editor background */
+.monaco-editor .margin,
+.monaco-editor .margin-view-overlays,
+.monaco-editor .line-numbers {
+    background-color: transparent !important;
+}
+
+
+/* Gutter and line number container */
+.monaco-editor .glyph-margin,
+.monaco-editor .margin-view-zones {
+    background-color: transparent !important;
+}
+
+/* Current line highlight */
+.monaco-editor .view-overlays .current-line,
+.monaco-editor .margin-view-overlays .current-line {
+    background-color: rgba(164, 143, 255, 0.1) !important;
+    border: none !important;
+}
+
+/* Line number text styling */
+.monaco-editor .line-numbers {
+    color: var(--accent-foreground) !important;
+    opacity: 0.5 !important;
+}
+
+.monaco-editor .line-numbers.active-line-number {
+    color: var(--primary) !important;
+    opacity: 1 !important;
+}
+
+/* Editor lines content area */
+.lines-content.monaco-editor-background {
+    background-color: var(--background) !important;
+}
+
+/* View lines container */
+.view-lines {
+    background-color: transparent !important;
+}
+
 /* ===== ULTRA BRIGHT PROGRAMMER-OPTIMIZED COLORS ===== */
 /* Designed specifically for transparent backgrounds with maximum readability and semantic meaning */
 
