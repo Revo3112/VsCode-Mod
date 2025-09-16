@@ -119,8 +119,8 @@ input, textarea, select, button,
 
 /* mtk1 & mtk8 - Default Text & Variables (Bright Neutral Canvas) */
 .mtk1, .mtk8 {
-    color: #30D07D !important; /* Putih gading yang cerah, sebagai kanvas netral agar warna lain bersinar. */
-    text-shadow: 0 0 var(--glow-radius) rgba(48, 208, 125, 0.5) !important;
+    color: #FF4A4A !important; /* Merah cerah untuk default text & variables */
+    text-shadow: 0 0 var(--glow-radius) rgba(255, 74, 74, 0.5) !important;
 }
 
 /* mtk2 & mtk3 - Comments (Deep Space Blue - Recedes with elegance) */
@@ -177,10 +177,11 @@ input, textarea, select, button,
 
 /* mtk21 - Errors */
 .mtk21 {
-    color: #FF4A4A !important;
-    font-weight: 600 !important;
-    text-decoration: underline !important;
-    text-shadow: 0 0 5px #FF0000 !important;
+    color: #FF0000 !important; /* Pure red - sangat merah murni */
+    font-weight: 700 !important;
+    text-decoration: underline wavy !important;
+    text-shadow: 0 0 8px #FF0000 !important;
+    background-color: rgba(255, 0, 0, 0.1) !important; /* Background merah transparan */
 }
 
 /* mtk22 - Warnings */
