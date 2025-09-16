@@ -10,10 +10,10 @@
     --accent-foreground: #e2e2f5;    /* General text & icons - light greyish lavender */
 
     /* Alpha Variants for Layering */
-    --primary-alpha: rgba(164, 143, 255, 0.8);
-    --secondary-alpha: rgba(45, 43, 85, 0.8);
-    --background-alpha: rgba(15, 15, 26, 0.95);
-    --accent-alpha: rgba(48, 48, 96, 0.8);
+    --primary-alpha: rgba(164, 143, 255, 0.8);      /* Vibrant lavender with transparency */
+    --secondary-alpha: rgba(45, 43, 85, 0.8);       /* Deep indigo with transparency */
+    --background-alpha: rgba(15, 15, 26, 0.95);     /* Deep space blue with transparency */
+    --accent-alpha: rgba(48, 48, 96, 0.8);          /* Muted indigo with transparency */
 }
 
 
