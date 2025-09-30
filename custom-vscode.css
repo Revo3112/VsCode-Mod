@@ -1,515 +1,1134 @@
 /* Custom Dark Theme Color Palette Variables */
-:root {
-    /* Custom Color Palette - "Cosmic Night" Theme */
-    --primary: #a48fff;              /* Primary accent - vibrant lavender */
-    --primary-foreground: #0f0f1a;    /* Text on primary - deep blue for high contrast */
-    --secondary: #2d2b55;            /* Secondary UI - deep indigo */
-    --secondary-foreground: #c4c2ff; /* Secondary text - pale lavender */
-    --background: #0f0f1a;           /* Main background - deep space blue */
-    --accent: #303060;               /* Borders & status bar - muted indigo */
-    --accent-foreground: #e2e2f5;    /* General text & icons - light greyish lavender */
 
-    /* Alpha Variants for Layering */
-    --primary-alpha: rgba(164, 143, 255, 0.8);      /* Vibrant lavender with transparency */
-    --secondary-alpha: rgba(45, 43, 85, 0.8);       /* Deep indigo with transparency */
-    --background-alpha: rgba(15, 15, 26, 0.95);     /* Deep space blue with transparency */
-    --accent-alpha: rgba(48, 48, 96, 0.8);          /* Muted indigo with transparency */
+:root {
+
+/* Custom Color Palette - "Cosmic Night" Theme */
+
+--primary: #a48fff; /* Primary accent - vibrant lavender */
+
+--primary-foreground: #0f0f1a; /* Text on primary - deep blue for high contrast */
+
+--secondary: #2d2b55; /* Secondary UI - deep indigo */
+
+--secondary-foreground: #c4c2ff; /* Secondary text - pale lavender */
+
+--background: #0f0f1a; /* Main background - deep space blue */
+
+--accent: #303060; /* Borders & status bar - muted indigo */
+
+--accent-foreground: #e2e2f5; /* General text & icons - light greyish lavender */
+
+
+/* Alpha Variants for Layering */
+
+--primary-alpha: rgba(164, 143, 255, 0.8); /* Vibrant lavender with transparency */
+
+--secondary-alpha: rgba(45, 43, 85, 0.8); /* Deep indigo with transparency */
+
+--background-alpha: rgba(15, 15, 26, 0.95); /* Deep space blue with transparency */
+
+--accent-alpha: rgba(48, 48, 96, 0.8); /* Muted indigo with transparency */
+
 }
+
 
 
 /* ===== GLOBAL FONT SETTINGS ===== */
+
 /* Ensure editor and all text elements use the font */
+
 .monaco-editor, .monaco-editor-background,
+
 .monaco-workbench, .part, .composite,
+
 .monaco-list, .monaco-tree,
+
 input, textarea, select, button,
+
 .quick-input-widget, .command-center,
+
 .titlebar, .statusbar {
-    font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', monospace !important;
+
+font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', monospace !important;
+
 }
+
 /* ===== EDITOR AREA ===== */
+
 /* ===== CURSOR & ICONS FIXES ===== */
 
+
 /* Fix cursor visibility - Make it visible and properly colored */
+
 .monaco-editor .cursor {
-    background-color: var(--primary) !important;
-    border-color: var(--primary) !important;
-    width: 2px !important;
-    visibility: visible !important;
-    display: block !important;
+
+background-color: var(--primary) !important;
+
+border-color: var(--primary) !important;
+
+width: 2px !important;
+
+visibility: visible !important;
+
+display: block !important;
+
 }
+
 
 /* ===== EDITOR BACKGROUND CONSISTENCY ===== */
 
+
 /* Main editor background - Match sidebar */
+
 .monaco-editor,
+
 .monaco-editor-background,
+
 .monaco-editor .monaco-editor-background {
-    background-color: var(--background) !important;
+
+background-color: var(--background) !important;
+
 }
 
+
 /* Editor Content Area */
+
 .monaco-editor .lines-content,
+
 .monaco-editor .view-lines,
+
 .monaco-editor .view-line {
-    background-color: transparent !important;
+
+background-color: transparent !important;
+
 }
+
 
 
 /* Line numbers area - Match editor background */
+
 .monaco-editor .margin,
+
 .monaco-editor .margin-view-overlays,
+
 .monaco-editor .line-numbers {
-    background-color: transparent !important;
+
+background-color: transparent !important;
+
 }
+
 
 
 /* Gutter and line number container */
+
 .monaco-editor .glyph-margin,
+
 .monaco-editor .margin-view-zones {
-    background-color: transparent !important;
+
+background-color: transparent !important;
+
 }
+
 
 /* Current line highlight */
+
 .monaco-editor .view-overlays .current-line,
+
 .monaco-editor .margin-view-overlays .current-line {
-    background-color: rgba(164, 143, 255, 0.1) !important;
-    border: none !important;
+
+background-color: rgba(164, 143, 255, 0.1) !important;
+
+border: none !important;
+
 }
+
 
 /* Line number text styling */
+
 .monaco-editor .line-numbers {
-    color: var(--accent-foreground) !important;
-    opacity: 0.5 !important;
+
+color: var(--accent-foreground) !important;
+
+opacity: 0.5 !important;
+
 }
+
 
 .monaco-editor .line-numbers.active-line-number {
-    color: var(--primary) !important;
-    opacity: 1 !important;
+
+color: var(--primary) !important;
+
+opacity: 1 !important;
+
 }
+
 
 /* Editor lines content area */
+
 .lines-content.monaco-editor-background {
-    background-color: var(--background) !important;
+
+background-color: var(--background) !important;
+
 }
+
 
 /* View lines container */
+
 .view-lines {
-    background-color: transparent !important;
+
+background-color: transparent !important;
+
 }
 
-/* ===== AURORA NEON: A DYNAMIC & DISTINCTIVE THEME =====
- * Philosophy: Maximum chromatic distinction and a subtle 'Aura-Glow' effect.
- * Each color is from a different family to ensure zero visual ambiguity.
- * Based on analysis of high-energy neon palettes (Cyan, Magenta, Yellow).
- * The 'Aura-Glow' effect enhances brightness without creating a blurry shadow.
- */
+
+/* ===== AURORA NEON PASTEL: EXTENDED VARIATIONS =====
+
+* Philosophy: Menggunakan warna asli dengan variasi neon pastel yang lebih beragam
+
+* Berdasarkan riset neon pastel: bright vivid colors dengan efek glow
+
+* Setiap warna memiliki family yang berbeda untuk distinction maksimal
+
+*/
+
 
 /* ===== CORE FONT WEIGHTS ===== */
+
 .mtk-base { font-weight: 400 !important; }
+
 .mtk-important { font-weight: 500 !important; }
+
 .mtk-critical { font-weight: 600 !important; }
 
-/* ===== THE AURORA NEON PALETTE ===== */
 
-/* Helper function for the subtle glow effect */
+/* ===== GLOW EFFECT ===== */
+
 :root {
-    --glow-radius: 6px;
+
+--glow-radius: 6px;
+
 }
 
-/* mtk1 & mtk8 - Default Text & Variables (Bright Neutral Canvas) */
+
+/* mtk1 & mtk8 - Default Text & Variables (Original Red + Variations) */
+
 .mtk1, .mtk8 {
-    color: #FF4A4A !important; /* Merah cerah untuk default text & variables */
-    text-shadow: 0 0 var(--glow-radius) rgba(255, 74, 74, 0.5) !important;
+
+color: #FF4A4A !important; /* Original merah cerah Anda */
+
+text-shadow: 0 0 var(--glow-radius) rgba(255, 74, 74, 0.5) !important;
+
 }
 
-/* mtk2 & mtk3 - Comments (Deep Space Blue - Recedes with elegance) */
+
+/* mtk2 & mtk3 - Comments (Neon Mint Green) */
+
 .mtk2, .mtk3 {
-    color: #9BE9CC !important; /* Biru tua yang dingin. Jauh lebih baik dari abu-abu, memberikan kedalaman. */
-    font-style: italic !important;
+
+color: #9BE9CC !important; /* Original hijau mint Anda */
+
+font-style: italic !important;
+
 }
 
-/* mtk4 & mtk9 & mtk13 - Keywords, Classes, Tags (Cyber Magenta) */
+
+/* mtk4 & mtk9 & mtk13 - Keywords (Original Cyber Magenta) */
+
 .mtk4, .mtk9, .mtk13 {
-    color: #FE53BB !important; /* Diambil dari palet Anda. Warna pink yang kuat dan berani untuk semua elemen struktur. */
-    text-shadow: 0 0 var(--glow-radius) rgba(254, 83, 187, 0.5) !important;
-    font-weight: 500 !important;
+
+color: #FE53BB !important; /* Original pink magenta Anda */
+
+text-shadow: 0 0 var(--glow-radius) rgba(254, 83, 187, 0.5) !important;
+
+font-weight: 500 !important;
+
 }
 
-/* mtk5 - Strings ("hello world") - Solar Yellow */
+
+/* mtk5 - Strings (Original Solar Yellow) */
+
 .mtk5 {
-    color: #F5D300 !important; /* Diambil dari palet Anda. Kuning emas yang hangat dan sangat jelas untuk data teks. */
-    text-shadow: 0 0 var(--glow-radius) rgba(245, 211, 0, 0.5) !important;
+
+color: #F5D300 !important; /* Original kuning emas Anda */
+
+text-shadow: 0 0 var(--glow-radius) rgba(245, 211, 0, 0.5) !important;
+
 }
 
-/* mtk6 - Numbers & Booleans (123, true) - Volcanic Orange */
+
+/* mtk6 - Numbers & Booleans (Original Volcanic Orange) */
+
 .mtk6 {
-    color: #FE6B35 !important; /* Diambil dari palet Anda. Oranye cerah yang berbeda untuk data literal. */
-    text-shadow: 0 0 var(--glow-radius) rgba(254, 107, 53, 0.4) !important;
+
+color: #FE6B35 !important; /* Original oranye Anda */
+
+text-shadow: 0 0 var(--glow-radius) rgba(254, 107, 53, 0.4) !important;
+
 }
 
-/* mtk7 & mtk11 - Functions & Operators (Electric Cyan) */
+
+/* mtk7 & mtk11 - Functions & Operators (Original Electric Cyan) */
+
 .mtk7, .mtk11 {
-    color: #08F7FE !important; /* Diambil dari palet Anda. Cyan paling terang untuk semua "aksi" (fungsi & operator). */
-    text-shadow: 0 0 var(--glow-radius) rgba(8, 247, 254, 0.5) !important;
-    font-weight: 500 !important;
+
+color: #08F7FE !important; /* Original cyan terang Anda */
+
+text-shadow: 0 0 var(--glow-radius) rgba(8, 247, 254, 0.5) !important;
+
+font-weight: 500 !important;
+
 }
 
-/* mtk10 - Important Constants - Mint Green */
+
+/* mtk10 - Important Constants (Original Mint) */
+
 .mtk10 {
-    color: #09FBD3 !important; /* Diambil dari palet Anda. Hijau mint sebagai aksen khusus untuk konstanta penting. */
-    text-shadow: 0 0 var(--glow-radius) rgba(9, 251, 211, 0.6) !important;
-    font-weight: 600 !important;
+
+color: #09FBD3 !important; /* Original hijau mint aksen Anda */
+
+text-shadow: 0 0 var(--glow-radius) rgba(9, 251, 211, 0.6) !important;
+
+font-weight: 600 !important;
+
 }
 
-/* mtk12 - Brackets/Delimiters ({}) - Bright Neutral (subtly brighter) */
+
+/* mtk12 - Brackets/Delimiters (Original Purple) */
+
 .mtk12 {
-    color: #E1A4FB !important; /* Putih murni untuk menandai batas blok dengan jelas. */
+
+color: #E1A4FB !important; /* Original ungu pastel Anda */
+
 }
+
+
+/* mtk16 - Special Elements (Original Blue) */
 
 .mtk16 {
-    color: #87C1FF !important; /* Hijau limau cerah untuk anotasi khusus. */
-    text-shadow: 0 0 var(--glow-radius) rgba(135, 193, 255, 0.5) !important;
-    font-weight: 500 !important;
+
+color: #87C1FF !important; /* Original biru muda Anda */
+
+text-shadow: 0 0 var(--glow-radius) rgba(135, 193, 255, 0.5) !important;
+
+font-weight: 500 !important;
+
 }
+
+
+/* ===== EXTENDED NEON PASTEL VARIATIONS (Based on research) ===== */
+
+
+/* mtk14 - Neon Coral Pink */
+
+.mtk14 {
+
+color: #FF7878 !important; /* Soft neon coral - dari riset */
+
+text-shadow: 0 0 var(--glow-radius) rgba(255, 120, 120, 0.4) !important;
+
+}
+
+
+/* mtk15 - Electric Violet */
+
+.mtk15 {
+
+color: #5B5EFD !important; /* Electric violet - dari riset neon pastel */
+
+text-shadow: 0 0 var(--glow-radius) rgba(91, 94, 253, 0.4) !important;
+
+}
+
+
+/* mtk17 - Neon Lime Green */
+
+.mtk17 {
+
+color: #90FFCA !important; /* Bright lime pastel - dari riset */
+
+text-shadow: 0 0 var(--glow-radius) rgba(144, 255, 202, 0.4) !important;
+
+}
+
+
+/* mtk18 - Bright Lemon */
+
+.mtk18 {
+
+color: #FFE699 !important; /* Lemon neon pastel - dari riset */
+
+text-shadow: 0 0 var(--glow-radius) rgba(255, 230, 153, 0.3) !important;
+
+}
+
+
+/* mtk19 - Sky Blue Neon */
+
+.mtk19 {
+
+color: #37D0FD !important; /* Sky blue bright - dari riset */
+
+text-shadow: 0 0 var(--glow-radius) rgba(55, 208, 253, 0.4) !important;
+
+}
+
+
+/* mtk20 - Hot Pink Neon */
+
+.mtk20 {
+
+color: #FCC8FF !important; /* Hot pink soft - dari riset */
+
+text-shadow: 0 0 var(--glow-radius) rgba(252, 200, 255, 0.3) !important;
+
+}
+
+
+/* mtk23 - Neon Purple */
+
+.mtk23 {
+
+color: #C9AEFF !important; /* Purple bright pastel - dari riset */
+
+text-shadow: 0 0 var(--glow-radius) rgba(201, 174, 255, 0.4) !important;
+
+}
+
+
+/* mtk24 - Electric Green */
+
+.mtk24 {
+
+color: #D9FFD8 !important; /* Electric green soft - dari riset */
+
+text-shadow: 0 0 var(--glow-radius) rgba(217, 255, 216, 0.3) !important;
+
+}
+
+
+/* mtk25 - Neon Peach */
+
+.mtk25 {
+
+color: #FFBB86FC !important; /* Neon peach dengan transparansi */
+
+text-shadow: 0 0 var(--glow-radius) rgba(255, 187, 134, 0.4) !important;
+
+}
+
+
+/* ===== ADDITIONAL BRIGHT NEON PASTELS ===== */
+
+
+/* Extra variations for more tokens if needed */
+
+.mtk26 {
+
+color: #FF6BB6 !important; /* Bright magenta pink */
+
+text-shadow: 0 0 var(--glow-radius) rgba(255, 107, 182, 0.4) !important;
+
+}
+
+
+.mtk27 {
+
+color: #4ECDC4 !important; /* Turquoise neon */
+
+text-shadow: 0 0 var(--glow-radius) rgba(78, 205, 196, 0.4) !important;
+
+}
+
+
+.mtk28 {
+
+color: #45B7D1 !important; /* Ocean blue bright */
+
+text-shadow: 0 0 var(--glow-radius) rgba(69, 183, 209, 0.4) !important;
+
+}
+
+
+.mtk29 {
+
+color: #F9CA24 !important; /* Golden yellow neon */
+
+text-shadow: 0 0 var(--glow-radius) rgba(249, 202, 36, 0.4) !important;
+
+}
+
+
+.mtk30 {
+
+color: #6C5CE7 !important; /* Deep neon purple */
+
+text-shadow: 0 0 var(--glow-radius) rgba(108, 92, 231, 0.4) !important;
+
+}
+
 
 /* ===== CRITICAL ALERT SYSTEM ===== */
 
-/* mtk21 - Errors */
+/* mtk21 - Errors (Enhanced Red) */
+
 .mtk21 {
-    color: #FF0000 !important; /* Pure red - sangat merah murni */
-    font-weight: 700 !important;
-    text-decoration: underline wavy !important;
-    text-shadow: 0 0 8px #FF0000 !important;
-    background-color: rgba(255, 0, 0, 0.1) !important; /* Background merah transparan */
+
+color: #FF0040 !important; /* Bright red dengan sedikit pink */
+
+font-weight: 700 !important;
+
+text-decoration: underline wavy !important;
+
+text-shadow: 0 0 8px rgba(255, 0, 64, 0.6) !important;
+
+background-color: rgba(255, 0, 64, 0.1) !important;
+
 }
 
-/* mtk22 - Warnings */
+
+/* mtk22 - Warnings (Enhanced Yellow) */
+
 .mtk22 {
-    color: #F5D300 !important; /* Kuning (warna string) untuk peringatan. */
-    font-style: italic !important;
-    text-decoration: underline dotted !important;
+
+color: #FFEB3B !important; /* Bright warning yellow */
+
+font-style: italic !important;
+
+text-decoration: underline dotted !important;
+
+text-shadow: 0 0 6px rgba(255, 235, 59, 0.4) !important;
+
 }
 
-/* ===== CONSISTENCY & SPACING (UNCHANGED) ===== */
+
+/* ===== CONSISTENCY & SPACING ===== */
+
 .mtk1, .mtk2, .mtk3, .mtk4, .mtk5, .mtk6, .mtk7, .mtk8, .mtk9, .mtk10,
+
 .mtk11, .mtk12, .mtk13, .mtk14, .mtk15, .mtk16, .mtk17, .mtk18, .mtk19, .mtk20,
-.mtk21, .mtk22, .mtk23, .mtk24, .mtk25 {
-    line-height: 1.5 !important;
-    letter-spacing: 0.02em !important;
+
+.mtk21, .mtk22, .mtk23, .mtk24, .mtk25, .mtk26, .mtk27, .mtk28, .mtk29, .mtk30 {
+
+line-height: 1.5 !important;
+
+letter-spacing: 0.02em !important;
+
+}
+
+
+/* ===== ENHANCED HOVER EFFECTS ===== */
+
+.mtk1:hover, .mtk4:hover, .mtk5:hover, .mtk6:hover, .mtk7:hover,
+
+.mtk8:hover, .mtk9:hover, .mtk10:hover, .mtk11:hover, .mtk13:hover,
+
+.mtk16:hover, .mtk14:hover, .mtk15:hover, .mtk17:hover, .mtk18:hover,
+
+.mtk19:hover, .mtk20:hover, .mtk23:hover, .mtk24:hover, .mtk25:hover {
+
+filter: brightness(1.3) saturate(1.2) !important;
+
+transition: all 0.2s ease !important;
+
+transform: translateY(-1px) !important;
+
+}
+
+
+/* ===== SPECIAL ANIMATION FOR CRITICAL ELEMENTS ===== */
+
+@keyframes neon-pulse {
+
+0% { text-shadow: 0 0 var(--glow-radius) rgba(255, 0, 64, 0.6); }
+
+50% { text-shadow: 0 0 calc(var(--glow-radius) * 1.5) rgba(255, 0, 64, 0.8); }
+
+100% { text-shadow: 0 0 var(--glow-radius) rgba(255, 0, 64, 0.6); }
+
+}
+
+
+.mtk21 {
+
+animation: neon-pulse 2s ease-in-out infinite !important;
+
 }
 
 /* ===== SIDEBAR ===== */
+
 /* Side bar background - Clean solid color */
+
 .part.sidebar {
-    background: var(--background) !important;
-    box-shadow: 0px 0px 50px var(--primary-alpha) !important;
-    border-right: 1px solid var(--accent) !important;
+
+background: var(--background) !important;
+
+box-shadow: 0px 0px 50px var(--primary-alpha) !important;
+
+border-right: 1px solid var(--accent) !important;
+
 }
+
 
 /* File Explorer Selected Item - Preserve original positioning with proper indentation */
+
 .monaco-list.list_id_1 .monaco-list-row.selected {
-    background: var(--primary) !important;
-    opacity: 1 !important;
+
+background: var(--primary) !important;
+
+opacity: 1 !important;
+
 }
+
 
 .monaco-list.list_id_1 .monaco-list-row.selected .label-name {
-    color: var(--primary-foreground) !important;
-    opacity: 1 !important;
-    font-weight: 500 !important;
+
+color: var(--primary-foreground) !important;
+
+opacity: 1 !important;
+
+font-weight: 500 !important;
+
 }
+
 
 /* File explorer action buttons */
+
 .monaco-workbench .part.sidebar .title-actions .actions-container {
-    display: none;
+
+display: none;
+
 }
+
 
 /* File Explorer Item Label - Best coding fonts with modern typography */
+
 .monaco-tree .monaco-tree-row .label-name,
+
 .monaco-list .monaco-list-row .monaco-icon-label .label-name {
-    font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', monospace !important;
-    font-size: 14px !important;
-    font-weight: 400 !important;
-    color: var(--secondary-foreground) !important;
+
+font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', monospace !important;
+
+font-size: 14px !important;
+
+font-weight: 400 !important;
+
+color: var(--secondary-foreground) !important;
+
 }
+
 
 .explorer-item-edited {
-    font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', monospace !important;
-    font-size: 14px !important;
-    background: var(--primary-alpha) !important;
-    border-radius: 4px !important;
+
+font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', monospace !important;
+
+font-size: 14px !important;
+
+background: var(--primary-alpha) !important;
+
+border-radius: 4px !important;
+
 }
+
 
 /* Sidebar top shadow - Accent shadow */
+
 .monaco-scrollable-element>.shadow.top {
-    box-shadow: 0px 0px 10px var(--primary-alpha) !important;
+
+box-shadow: 0px 0px 10px var(--primary-alpha) !important;
+
 }
+
 
 /* Sidebar title - Clean solid background */
+
 .composite.title {
-    background: var(--accent) !important;
+
+background: var(--accent) !important;
+
 }
+
 
 .composite.title h2 {
-    font-weight: bold !important;
-    font-size: 12px !important;
-    text-transform: uppercase !important;
-    color: var(--accent-foreground) !important;
-    letter-spacing: 1px !important;
+
+font-weight: bold !important;
+
+font-size: 12px !important;
+
+text-transform: uppercase !important;
+
+color: var(--accent-foreground) !important;
+
+letter-spacing: 1px !important;
+
 }
 
+
 /* Scroll Bar - Clean solid color */
+
 .slider {
-    position: absolute !important;
-    right: 1px !important;
-    width: 3px !important;
-    background: var(--accent) !important;
-    border-radius: 2px !important;
-    left: auto !important;
+
+position: absolute !important;
+
+right: 1px !important;
+
+width: 3px !important;
+
+background: var(--accent) !important;
+
+border-radius: 2px !important;
+
+left: auto !important;
+
 }
+
 
 /* ===== TABS ===== */
 
+
 /* Tab container background */
+
 .title.tabs {
-    background: var(--background) !important;
+
+background: var(--background) !important;
+
 }
+
 
 /* Tab background - Primary dark background */
+
 .tab {
-    background: var(--background) !important;
-    color: var(--secondary-foreground) !important;
-    border-bottom: 1px solid transparent !important;
-    border-right: none !important; /* Remove separator between tabs */
+
+background: var(--background) !important;
+
+color: var(--secondary-foreground) !important;
+
+border-bottom: 1px solid transparent !important;
+
+border-right: none !important; /* Remove separator between tabs */
+
 }
+
 
 /* Active tab - Primary color */
+
 .tab.active {
-    background: var(--secondary) !important;
-    color: var(--accent-foreground) !important;
-    border-bottom: 1px solid var(--primary) !important;
+
+background: var(--secondary) !important;
+
+color: var(--accent-foreground) !important;
+
+border-bottom: 1px solid var(--primary) !important;
+
 }
 
+
 /* Tab hover - Transparent accent */
+
 .tab:hover {
-    background: var(--accent-alpha) !important;
-    color: var(--accent-foreground) !important;
+
+background: var(--accent-alpha) !important;
+
+color: var(--accent-foreground) !important;
+
 }
+
 
 /* ===== STATUSBAR ===== */
 
+
 /* Status bar - Clean accent color */
+
 .part.statusbar {
-    background: var(--accent) !important;
-    color: var(--accent-foreground) !important;
-    border-top: 1px solid var(--secondary) !important;
+
+background: var(--accent) !important;
+
+color: var(--accent-foreground) !important;
+
+border-top: 1px solid var(--secondary) !important;
+
 }
+
 
 /* Status bar items - Light gray text */
+
 .statusbar-item {
-    color: var(--accent-foreground) !important;
+
+color: var(--accent-foreground) !important;
+
 }
 
+
 .statusbar-item:hover {
-    background: var(--background-alpha) !important;
-    border-radius: 4px !important;
+
+background: var(--background-alpha) !important;
+
+border-radius: 4px !important;
+
 }
+
 
 /* ===== TOOLTIPS & HOVERS ===== */
 
+
 /* Tooltip box style - REMOVE TRANSPARENCY ONLY */
+
 .monaco-editor-hover,
+
 .monaco-hover {
-    box-shadow: 0px 8px 32px var(--primary-alpha) !important;
-    background: var(--secondary) !important;
-    backdrop-filter: none !important;
-    border-radius: 16px !important;
-    border: 1px solid var(--accent) !important;
-    outline: 0px !important;
-    color: var(--accent-foreground) !important;
+
+box-shadow: 0px 8px 32px var(--primary-alpha) !important;
+
+background: var(--secondary) !important;
+
+backdrop-filter: none !important;
+
+border-radius: 16px !important;
+
+border: 1px solid var(--accent) !important;
+
+outline: 0px !important;
+
+color: var(--accent-foreground) !important;
+
 }
 
+
 .monaco-resizable-hover {
-    border: none !important;
-    background: var(--secondary) !important;
+
+border: none !important;
+
+background: var(--secondary) !important;
+
 }
+
 
 /* ===== TITLEBAR ===== */
 
+
 /* Main container for the entire top bar */
+
 .monaco-workbench .part.titlebar {
-    background: var(--background) !important;
-    border-bottom: 1px solid var(--accent) !important;
+
+background: var(--background) !important;
+
+border-bottom: 1px solid var(--accent) !important;
+
 }
+
 
 /* Container for the minimize, maximize, close buttons */
+
 .window-controls-container {
-    background: var(--background) !important;
+
+background: var(--background) !important;
+
 }
+
 
 /* Project title's style at the top - Accent background */
+
 .monaco-workbench .part.titlebar>.titlebar-container>.titlebar-center>.window-title>.command-center .action-item.command-center-center {
-    border: none !important;
-    background: var(--primary-alpha) !important;
-    border-radius: 8px !important;
-    padding: 4px 12px !important;
-    color: var(--accent-foreground) !important;
+
+border: none !important;
+
+background: var(--primary-alpha) !important;
+
+border-radius: 8px !important;
+
+padding: 4px 12px !important;
+
+color: var(--accent-foreground) !important;
+
 }
 
+
 /* Project Title */
+
 .titlebar-left {
-    justify-content: flex-start !important;
-    flex-grow: 0 !important;
-    width: 75px !important;
+
+justify-content: flex-start !important;
+
+flex-grow: 0 !important;
+
+width: 75px !important;
+
 }
+
 
 /* ===== SEARCH ===== */
 
+
 /* Search container */
+
 .search-view {
-    background: var(--background) !important;
+
+background: var(--background) !important;
+
 }
+
 
 /* Search Label */
+
 .search-label {
-    font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', monospace !important;
-    font-size: 14px !important;
-    color: var(--secondary-foreground) !important;
-    display: block !important;
+
+font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', monospace !important;
+
+font-size: 14px !important;
+
+color: var(--secondary-foreground) !important;
+
+display: block !important;
+
 }
+
 
 /* Search input */
+
 .search-input {
-    background: var(--secondary-alpha) !important;
-    border: 1px solid var(--secondary-foreground) !important;
-    border-radius: 8px !important;
-    color: var(--accent-foreground) !important;
+
+background: var(--secondary-alpha) !important;
+
+border: 1px solid var(--secondary-foreground) !important;
+
+border-radius: 8px !important;
+
+color: var(--accent-foreground) !important;
+
 }
+
 
 /* Search icon */
+
 .search-icon {
-    display: none !important;
+
+display: none !important;
+
 }
+
 
 .codicon-search::before {
-    display: none !important;
+
+display: none !important;
+
 }
+
 
 .codicon-arrow-right, .codicon-arrow-left {
-    display: none !important;
+
+display: none !important;
+
 }
+
 
 .titlebar-right > * {
-    display: none !important;
+
+display: none !important;
+
 }
 
+
 .command-center-center {
-    width: auto !important;
+
+width: auto !important;
+
 }
+
 
 /* ===== COMMAND PALETTE ===== */
 
+
 /* Command Palette - REMOVE TRANSPARENCY ONLY */
+
 .quick-input-widget {
-    transform: translateY(-50%) !important;
-    top: 50% !important;
-    box-shadow: 0px 16px 64px var(--primary-alpha) !important;
-    border: 2px solid var(--primary) !important;
-    padding: 20px 20px 28px 20px !important;
-    background: var(--secondary) !important;
-    backdrop-filter: none !important;
-    border-radius: 24px !important;
-    -webkit-border-radius: 24px !important;
-    -moz-border-radius: 24px !important;
-    -ms-border-radius: 24px !important;
-    -o-border-radius: 24px !important;
+
+transform: translateY(-50%) !important;
+
+top: 50% !important;
+
+box-shadow: 0px 16px 64px var(--primary-alpha) !important;
+
+border: 2px solid var(--primary) !important;
+
+padding: 20px 20px 28px 20px !important;
+
+background: var(--secondary) !important;
+
+backdrop-filter: none !important;
+
+border-radius: 24px !important;
+
+-webkit-border-radius: 24px !important;
+
+-moz-border-radius: 24px !important;
+
+-ms-border-radius: 24px !important;
+
+-o-border-radius: 24px !important;
+
 }
+
 
 .quick-input-list, .quick-input-list .list_id_6 {
-    min-height: 400px !important;
-    background: transparent !important;
+
+min-height: 400px !important;
+
+background: transparent !important;
+
 }
+
 
 /* Command palette items - IMPROVE CONTRAST ONLY */
+
 .quick-input-list .monaco-list-row {
-    border-radius: 8px !important;
-    margin: 2px 0 !important;
-    color: var(--accent-foreground) !important;
-    -webkit-border-radius: 8px !important;
-    -moz-border-radius: 8px !important;
-    -ms-border-radius: 8px !important;
-    -o-border-radius: 8px !important;
+
+border-radius: 8px !important;
+
+margin: 2px 0 !important;
+
+color: var(--accent-foreground) !important;
+
+-webkit-border-radius: 8px !important;
+
+-moz-border-radius: 8px !important;
+
+-ms-border-radius: 8px !important;
+
+-o-border-radius: 8px !important;
+
 }
+
 
 .quick-input-list .monaco-list-row:hover {
-    background: var(--primary-alpha) !important;
-    color: var(--accent-foreground) !important;
+
+background: var(--primary-alpha) !important;
+
+color: var(--accent-foreground) !important;
+
 }
+
 
 .quick-input-list .monaco-list-row.focused {
-    background: var(--primary) !important;
-    color: var(--primary-foreground) !important;
+
+background: var(--primary) !important;
+
+color: var(--primary-foreground) !important;
+
 }
+
 
 /* Remove background for lists */
+
 .monaco-list-rows {
-    background: transparent !important;
+
+background: transparent !important;
+
 }
+
 
 /* Command palette text input - REMOVE TRANSPARENCY ONLY */
+
 .quick-input-filter .monaco-inputbox {
-    border-radius: 16px !important;
-    padding: 18px !important;
-    border: 2px solid var(--primary) !important;
-    background: var(--background) !important;
-    font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', monospace !important;
-    font-size: 16px !important;
-    margin-bottom: 16px !important;
-    color: var(--accent-foreground) !important;
-    -webkit-border-radius: 16px !important;
-    -moz-border-radius: 16px !important;
-    -ms-border-radius: 16px !important;
-    -o-border-radius: 16px !important;
+
+border-radius: 16px !important;
+
+padding: 18px !important;
+
+border: 2px solid var(--primary) !important;
+
+background: var(--background) !important;
+
+font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', monospace !important;
+
+font-size: 16px !important;
+
+margin-bottom: 16px !important;
+
+color: var(--accent-foreground) !important;
+
+-webkit-border-radius: 16px !important;
+
+-moz-border-radius: 16px !important;
+
+-ms-border-radius: 16px !important;
+
+-o-border-radius: 16px !important;
+
 }
+
 
 .quick-input-filter .monaco-inputbox:focus {
-    border-color: var(--accent-foreground) !important;
-    box-shadow: 0 0 0 2px var(--primary-alpha) !important;
+
+border-color: var(--accent-foreground) !important;
+
+box-shadow: 0 0 0 2px var(--primary-alpha) !important;
+
 }
+
 
 /* Command blur backdrop - REMOVE TRANSPARENCY ONLY */
+
 #command-blur {
-    position: absolute !important;
-    width: 100% !important;
-    height: 100% !important;
-    background: var(--background-alpha) !important;
-    top: 0 !important;
-    left: 0 !important;
-    backdrop-filter: none !important;
+
+position: absolute !important;
+
+width: 100% !important;
+
+height: 100% !important;
+
+background: var(--background-alpha) !important;
+
+top: 0 !important;
+
+left: 0 !important;
+
+backdrop-filter: none !important;
+
 }
+
 
 /* Actions after command palette text input */
+
 .quick-input-inline-action-bar .actions-container .action-item {
-    margin-bottom: 16px !important;
-    background: var(--secondary-alpha) !important;
-    border-radius: 6px !important;
-    color: var(--secondary-foreground) !important;
-    -webkit-border-radius: 6px !important;
-    -moz-border-radius: 6px !important;
-    -ms-border-radius: 6px !important;
-    -o-border-radius: 6px !important;
+
+margin-bottom: 16px !important;
+
+background: var(--secondary-alpha) !important;
+
+border-radius: 6px !important;
+
+color: var(--secondary-foreground) !important;
+
+-webkit-border-radius: 6px !important;
+
+-moz-border-radius: 6px !important;
+
+-ms-border-radius: 6px !important;
+
+-o-border-radius: 6px !important;
+
 }
+
 
 .quick-input-header {
-    align-items: center !important;
+
+align-items: center !important;
+
 }
+
 
 /* Command palette's input box placeholder - IMPROVE CONTRAST */
+
 .monaco-inputbox input::placeholder {
-    color: var(--secondary-foreground) !important;
+
+color: var(--secondary-foreground) !important;
+
 }
 
+
 /* Monaco inputbox text */
+
 .monaco-inputbox input {
-    color: var(--accent-foreground) !important;
-}
+
+color: var(--accent-foreground) !important;
+
+} 
